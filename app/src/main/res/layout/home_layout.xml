@@ -97,25 +97,20 @@
             app:layout_constraintStart_toStartOf="@+id/textView8"
             app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
-        <com.crystal.crystalrangeseekbar.widgets.CrystalRangeSeekbar
+        <SeekBar
             android:id="@+id/seekBar"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:thumbTint="@color/light_blue"
+            android:progress="3"
             android:layout_marginTop="4dp"
-            app:bar_color="@color/grey"
-            app:bar_highlight_color="@color/light_blue"
-            app:corner_radius="10"
-            app:gap="20"
+            android:max="5"
+            android:progressTint="@color/light_blue"
             app:layout_constraintEnd_toStartOf="@+id/guideline2"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="@+id/guideline"
             app:layout_constraintTop_toBottomOf="@+id/textView9"
-            app:left_thumb_color="@color/light_blue"
-            app:left_thumb_color_pressed="@color/light_blue"
-            app:max_value="100"
-            app:min_value="50"
-            app:right_thumb_color="@color/light_blue"
-            app:right_thumb_color_pressed="@color/light_blue" />
+           />
 
         <TextView
             android:id="@+id/time_txtvw"
@@ -235,6 +230,28 @@
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:text="0"
+            android:textColor="@color/light_blue"
+            app:layout_constraintStart_toStartOf="@+id/guideline"
+            app:layout_constraintTop_toBottomOf="@+id/seekBar" />
+
+        <TextView
+            android:id="@+id/textView14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="5"
+            android:textColor="@color/light_blue"
+            app:layout_constraintEnd_toStartOf="@+id/guideline2"
+            app:layout_constraintTop_toBottomOf="@+id/seekBar" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

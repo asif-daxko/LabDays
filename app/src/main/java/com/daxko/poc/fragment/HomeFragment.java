@@ -2,8 +2,10 @@ package com.daxko.poc.fragment;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.SeekBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -21,6 +23,7 @@ public class HomeFragment extends Fragment {
     View view;
     TextView timeTxtvw;
     RecyclerView cardsRecyclerview;
+    SeekBar seekBar;
 
     @Nullable
     @Override
@@ -32,6 +35,7 @@ public class HomeFragment extends Fragment {
     }
 
     private void setData() {
+        seekBar= view.findViewById(R.id.seekBar);
         timeTxtvw= view.findViewById(R.id.time_txtvw);
         cardsRecyclerview= view.findViewById(R.id.cards_recyclerview);
         cardsRecyclerview.setAdapter(new CardAdapter(getActivity()));
@@ -39,5 +43,12 @@ public class HomeFragment extends Fragment {
         SimpleDateFormat sdf=new SimpleDateFormat("hh:mm a");
         sdf.format(currentTime);
         timeTxtvw.setText("Updated at "+sdf.format(currentTime));
+
+        seekBar.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                return true;
+            }
+        });
     }
 }
