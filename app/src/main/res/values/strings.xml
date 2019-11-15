@@ -4,4 +4,25 @@
     <string name="title_home">Home</string>
     <string name="title_friends">Friends</string>
     <string name="title_redeem">Redeem</string>
+
+    <string-array name="item_name">
+        <item >Bag</item>
+        <item >Caps</item>
+        <item >Mug</item>
+        <item >T-shirt</item>
+    </string-array>
+
+    <string-array name="item_values">
+        <item >250 DC</item>
+        <item >100 DC</item>
+        <item >50 DC</item>
+        <item >150 DC</item>
+    </string-array>
+
+    <string-array name="item_images">
+        <item >@drawable/bag</item>
+        <item >@drawable/caps</item>
+        <item >@drawable/mug</item>
+        <item >@drawable/t_shirt</item>
+    </string-array>
 </resources>
