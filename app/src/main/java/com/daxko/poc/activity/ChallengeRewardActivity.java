@@ -9,6 +9,7 @@ import android.view.MenuItem;
 
 import com.daxko.poc.R;
 import com.daxko.poc.fragment.HomeFragment;
+import com.daxko.poc.fragment.ProfileFragment;
 import com.daxko.poc.fragment.RedeemPointFragment;
 import com.daxko.poc.fragment.FriendsFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -41,6 +42,9 @@ public class ChallengeRewardActivity extends AppCompatActivity implements Bottom
 
             case R.id.navigation_redeem:
                 fragment = new RedeemPointFragment();
+                break;
+            case R.id.navigation_profile:
+                fragment = new ProfileFragment();
                 break;
         }
 
