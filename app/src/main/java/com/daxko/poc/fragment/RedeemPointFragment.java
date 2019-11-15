@@ -32,7 +32,7 @@ public class RedeemPointFragment extends Fragment {
         view = LayoutInflater.from(getContext()).inflate(R.layout.reward_log_screen, container, false);
 
         // set up images
-        int[] imagesArray = {R.drawable.bag, R.drawable.caps,R.drawable.mug,R.drawable.t_shirt};
+        int[] imagesArray = {R.mipmap.bag, R.mipmap.caps,R.mipmap.mug,R.mipmap.t_shirt};
 
         setUpdata(imagesArray);
         return view;
