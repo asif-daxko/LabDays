@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.daxko.poc.MainActivity;
 import com.daxko.poc.R;
 
 public class DashBoardActivity extends AppCompatActivity {

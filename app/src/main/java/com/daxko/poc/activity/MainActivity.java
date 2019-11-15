@@ -1,4 +1,4 @@
-package com.daxko.poc;
+package com.daxko.poc.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -8,6 +8,7 @@ import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
 
+import com.daxko.poc.R;
 import com.daxko.poc.fragment.HomeFragment;
 import com.daxko.poc.fragment.RedeemPointFragment;
 import com.daxko.poc.fragment.FriendsFragment;

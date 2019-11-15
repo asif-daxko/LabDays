@@ -14,7 +14,6 @@ import com.daxko.poc.R;
 
 public class HomeFragment extends Fragment {
     View view;
-    RecyclerView rewardClaimRecyclerview;
 
     @Nullable
     @Override
