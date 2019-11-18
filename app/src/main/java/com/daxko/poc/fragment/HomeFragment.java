@@ -17,7 +17,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.daxko.poc.R;
-import com.daxko.poc.activity.DashBoardActivity;
+import com.daxko.poc.activity.ChallengeDetailActivity;
 import com.daxko.poc.adapter.CardAdapter;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.Scopes;
@@ -50,7 +50,7 @@ public class HomeFragment extends Fragment implements GoogleApiClient.Connection
     TextView timeTxtvw, txtSteps;
     RecyclerView cardsRecyclerview;
     SeekBar seekBar;
-    private static final String TAG = DashBoardActivity.class.getSimpleName();
+    private static final String TAG = ChallengeDetailActivity.class.getSimpleName();
     private GoogleApiClient mGoogleApiClient;
     private static final int REQUEST_OAUTH = 1;
     int originalvalue = 44241;
@@ -198,7 +198,8 @@ public class HomeFragment extends Fragment implements GoogleApiClient.Connection
                     if (step_value == 0) {
                         return;
                     }
-                    float steps_today = step_value - originalvalue;
+//                    float steps_today = step_value - originalvalue;
+                    float steps_today = step_value;
                     seekBar.setProgress(steps_today >= 1000 ? (int) steps_today / 1000 : 0);
 
                     txtSteps.setText(steps_today + "");

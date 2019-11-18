@@ -9,7 +9,7 @@ import android.widget.Button;
 
 import com.daxko.poc.R;
 
-public class DashBoardActivity extends AppCompatActivity {
+public class ChallengeDetailActivity extends AppCompatActivity {
     Button startButton;
 
     @Override
@@ -25,7 +25,7 @@ public class DashBoardActivity extends AppCompatActivity {
         startButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(DashBoardActivity.this, ChallengeRewardActivity.class));
+                startActivity(new Intent(ChallengeDetailActivity.this, ChallengeRewardActivity.class));
             }
         });
     }

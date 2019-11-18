@@ -1,7 +1,9 @@
-package com.mobiquity.googlefithistorysteps.task;
+package com.daxko.poc.task;
 
 import android.os.AsyncTask;
 import android.util.Log;
+
+import com.daxko.poc.interfaces.StepUpdateListener;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.fitness.Fitness;
 import com.google.android.gms.fitness.data.Bucket;
@@ -12,7 +14,6 @@ import com.google.android.gms.fitness.data.DataType;
 import com.google.android.gms.fitness.data.Field;
 import com.google.android.gms.fitness.request.DataReadRequest;
 import com.google.android.gms.fitness.result.DataReadResult;
-import com.mobiquity.googlefithistorysteps.interfaces.StepUpdateListener;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;

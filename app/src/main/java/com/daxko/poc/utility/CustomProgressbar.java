@@ -5,7 +5,8 @@ import android.content.Context;
 import android.view.View;
 import android.view.Window;
 
-import com.mobiquity.googlefithistorysteps.R;
+import com.daxko.poc.R;
+
 
 /**
  * Created by hirenpatel on 27/10/17.

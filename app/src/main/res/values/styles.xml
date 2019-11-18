@@ -16,4 +16,8 @@
         <item name="android:textSize">11sp</item>
         <item name="android:textColor">@color/light_blue</item>
     </style>
+
+    <style name="MySeekBarTheme" parent="Widget.AppCompat.SeekBar" >
+        <item name="colorAccent">#ffff00</item>
+    </style>
 </resources>
