@@ -169,6 +169,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
+                android:textSize="12sp"
                 android:textColor="@color/selected_tab_color"
                 android:text="Reach 5 coin, 3 day in arow to reach LEVEL 2."
                 app:layout_constraintEnd_toEndOf="parent"
