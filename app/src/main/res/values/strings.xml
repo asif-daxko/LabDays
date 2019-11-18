@@ -12,6 +12,17 @@
         <item>Mug</item>
         <item>T-shirt</item>
     </string-array>
+    <string-array name="challenges_name">
+        <item>Cycling Challenge</item>
+        <item>1,000 Steps daily challenge</item>
+        <item>Swimming Challenge</item>
+    </string-array>
+    <string-array name="home_screen_item">
+        <item>Distance (kms)</item>
+        <item>Activity Calories</item>
+        <item>Daily rewards</item>
+        <item>Coin Balance</item>
+    </string-array>
 
     <string-array name="item_values">
         <item>250 DC</item>
