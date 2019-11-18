@@ -4,6 +4,7 @@
     <string name="title_home">Home</string>
     <string name="title_friends">Friends</string>
     <string name="title_redeem">Redeem</string>
+    <string name="title_profile">Profile</string>
 
     <string-array name="item_name">
         <item>Bag</item>
