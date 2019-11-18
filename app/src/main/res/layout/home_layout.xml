@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -17,6 +16,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:text="Today"
+            android:textSize="18sp"
+            android:textStyle="bold"
             android:textAlignment="center"
             android:textColor="@color/black"
             app:layout_constraintEnd_toStartOf="@+id/guideline2"
@@ -38,11 +39,11 @@
             app:layout_constraintGuide_end="20dp" />
 
         <TextView
-            android:id="@+id/textView6"
+            android:id="@+id/txtSteps"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:layout_marginTop="16dp"
-            android:text="3180"
+            android:text="0"
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="36sp"
@@ -58,9 +59,9 @@
             android:layout_marginTop="4dp"
             android:text="Total Steps "
             android:textColor="@color/black"
-            app:layout_constraintEnd_toEndOf="@+id/textView6"
-            app:layout_constraintStart_toStartOf="@+id/textView6"
-            app:layout_constraintTop_toBottomOf="@+id/textView6" />
+            app:layout_constraintEnd_toEndOf="@+id/txtSteps"
+            app:layout_constraintStart_toStartOf="@+id/txtSteps"
+            app:layout_constraintTop_toBottomOf="@+id/txtSteps" />
 
         <View
             android:id="@+id/view2"
@@ -102,7 +103,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:thumbTint="@color/light_blue"
-            android:progress="3"
+            android:progress="0"
             android:layout_marginTop="4dp"
             android:max="5"
             android:progressTint="@color/light_blue"
