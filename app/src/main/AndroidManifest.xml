@@ -20,6 +20,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".activity.LevelDescriptionActivity"></activity>
         <activity android:name=".activity.ChallengeListActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -28,7 +29,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.ChallengeRewardActivity" />
-        <activity android:name=".activity.ChallengeDetailActivity"></activity>
+        <activity android:name=".activity.ChallengeDetailActivity" />
 
         <meta-data
             android:name="preloaded_fonts"

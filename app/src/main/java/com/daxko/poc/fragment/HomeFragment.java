@@ -13,11 +13,13 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.daxko.poc.R;
 import com.daxko.poc.activity.ChallengeDetailActivity;
+import com.daxko.poc.activity.LevelDescriptionActivity;
 import com.daxko.poc.adapter.CardAdapter;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.Scopes;
@@ -49,6 +51,7 @@ public class HomeFragment extends Fragment implements GoogleApiClient.Connection
     View view;
     TextView timeTxtvw, txtSteps;
     RecyclerView cardsRecyclerview;
+    ConstraintLayout levelCard;
     SeekBar seekBar;
     private static final String TAG = ChallengeDetailActivity.class.getSimpleName();
     private GoogleApiClient mGoogleApiClient;
@@ -75,6 +78,7 @@ public class HomeFragment extends Fragment implements GoogleApiClient.Connection
         timeTxtvw = view.findViewById(R.id.time_txtvw);
         txtSteps = view.findViewById(R.id.txtSteps);
         cardsRecyclerview = view.findViewById(R.id.cards_recyclerview);
+        levelCard = view.findViewById(R.id.level_card);
 
 
         connectGoogleClient();
@@ -88,6 +92,12 @@ public class HomeFragment extends Fragment implements GoogleApiClient.Connection
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
                 return true;
+            }
+        });
+        levelCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getContext(), LevelDescriptionActivity.class));
             }
         });
     }
@@ -199,10 +209,10 @@ public class HomeFragment extends Fragment implements GoogleApiClient.Connection
                         return;
                     }
 //                    float steps_today = step_value - originalvalue;
-                    float steps_today = step_value;
-                    seekBar.setProgress(steps_today >= 1000 ? (int) steps_today / 1000 : 0);
+                    //float steps_today = step_value;
+                    seekBar.setProgress(step_value >= 1000 ? (int) step_value / 1000 : 0);
 
-                    txtSteps.setText(steps_today + "");
+                    txtSteps.setText(step_value + "");
                     //Toast.makeText(getApplicationContext(), "Field: " + field.getName() + " Value: " + value, Toast.LENGTH_SHORT).show();
                 }
             });
