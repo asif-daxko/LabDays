@@ -7,17 +7,17 @@
     <string name="title_profile">Profile</string>
 
     <string-array name="item_name">
-        <item >Bag</item>
-        <item >Caps</item>
-        <item >Mug</item>
-        <item >T-shirt</item>
+        <item>Bag</item>
+        <item>Caps</item>
+        <item>Mug</item>
+        <item>T-shirt</item>
     </string-array>
 
     <string-array name="item_values">
-        <item >250 DC</item>
-        <item >100 DC</item>
-        <item >50 DC</item>
-        <item >150 DC</item>
+        <item>250 DC</item>
+        <item>100 DC</item>
+        <item>50 DC</item>
+        <item>150 DC</item>
     </string-array>
 
     <!--<string-array name="item_images">
