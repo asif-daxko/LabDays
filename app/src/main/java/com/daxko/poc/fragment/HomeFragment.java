@@ -50,6 +50,7 @@ public class HomeFragment extends Fragment implements GoogleApiClient.Connection
         GoogleApiClient.OnConnectionFailedListener, OnDataPointListener {
     View view;
     TextView timeTxtvw, txtSteps,coinTextvw;
+    TextView startSeekbar,seekbarEnd;
     RecyclerView cardsRecyclerview;
     ConstraintLayout levelCard;
     SeekBar seekBar;
@@ -77,6 +78,8 @@ public class HomeFragment extends Fragment implements GoogleApiClient.Connection
         seekBar = view.findViewById(R.id.seekBar);
         timeTxtvw = view.findViewById(R.id.time_txtvw);
         txtSteps = view.findViewById(R.id.txtSteps);
+        startSeekbar = view.findViewById(R.id.start_seekbar);
+        seekbarEnd = view.findViewById(R.id.seekbar_end);
         coinTextvw = view.findViewById(R.id.textView8);
         cardsRecyclerview = view.findViewById(R.id.cards_recyclerview);
         levelCard = view.findViewById(R.id.level_card);
@@ -209,16 +212,39 @@ public class HomeFragment extends Fragment implements GoogleApiClient.Connection
                     if (step_value == 0) {
                         return;
                     }
+
+                    coinCalculation(step_value);
 //                    float steps_today = step_value - originalvalue;
                     //float steps_today = step_value;
-                    seekBar.setProgress(step_value >= 1000 ? (int) step_value / 1000 : 0);
-                    coinTextvw.setText((step_value >= 1000 ? (int) step_value / 1000 : 0)+"");
 
-                    txtSteps.setText(step_value + "");
                     //Toast.makeText(getApplicationContext(), "Field: " + field.getName() + " Value: " + value, Toast.LENGTH_SHORT).show();
                 }
             });
         }
+    }
+
+    private void coinCalculation(int step_value) {
+        int coins=step_value >= 1000 ? (int) step_value / 1000 : 0;
+        if(coins>10 && coins<=20){
+            updateSeekbar(10,20);
+        }else if(coins>20 && coins<=30){
+            updateSeekbar(20,30);
+        }else if(coins>30 && coins<=40){
+            updateSeekbar(30,40);
+        }else if(coins>40 && coins<=50){
+            updateSeekbar(40,50);
+        }else {
+            updateSeekbar(0,10);
+        }
+        seekBar.setProgress(coins);
+        coinTextvw.setText(coins+"");
+        txtSteps.setText(step_value + "");
+    }
+
+    private void updateSeekbar(int progressstart,int progressend) {
+            seekBar.setMax(progressend);
+            startSeekbar.setText(progressstart+"");
+            seekbarEnd.setText(progressend+"");
     }
 
     @Override

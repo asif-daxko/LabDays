@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">POC</string>
     <string name="daily_limit">Daily Limit</string>
-    <string name="safe_zone">Safe Zone: 0 to 5 coins</string>
+    <string name="safe_zone">Safe Zone: 0 to 10 coins</string>
     <string name="title_activity_challenge_reward">ChallengeRewardActivity</string>
     <string name="title_home">Home</string>
     <string name="title_friends">Friends</string>

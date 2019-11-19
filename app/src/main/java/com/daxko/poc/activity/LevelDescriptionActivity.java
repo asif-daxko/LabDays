@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.RadioGroup;
 
 import com.daxko.poc.R;
@@ -11,6 +13,7 @@ import com.daxko.poc.fragment.LevelTypeFragment;
 
 public class LevelDescriptionActivity extends AppCompatActivity {
     RadioGroup levelsRadiogrp;
+    ImageView backImg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,9 +21,11 @@ public class LevelDescriptionActivity extends AppCompatActivity {
         setContentView(R.layout.activity_level_description);
 
         setData();
+
     }
 
     private void setData() {
+        backImg=findViewById(R.id.back_img);
         levelsRadiogrp=findViewById(R.id.levels_radiogrp);
         loadFragment(new LevelTypeFragment(),1);
 
@@ -44,6 +49,13 @@ public class LevelDescriptionActivity extends AppCompatActivity {
                         loadFragment(new LevelTypeFragment(), 5);
                         break;
                 }
+            }
+        });
+
+        backImg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
             }
         });
     }
