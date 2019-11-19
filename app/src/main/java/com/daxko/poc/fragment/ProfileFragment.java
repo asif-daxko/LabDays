@@ -4,8 +4,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -13,29 +11,42 @@ import androidx.fragment.app.Fragment;
 
 import com.daxko.poc.R;
 
-public class ProfileFragment extends Fragment {
-    View view;
-    TextView headerTextvw,errorMsg,errorMsg1;
-    ImageView errorImage;
+import java.util.ArrayList;
 
+public class ProfileFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        view = LayoutInflater.from(getContext()).inflate(R.layout.reward_log_screen, container, false);
+        View view = LayoutInflater.from(getContext()).inflate(R.layout.fragment_profile, container, false);
 
-        setUpdata();
+        setUpData(view);
         return view;
     }
 
-    private void setUpdata() {
-        errorMsg = view.findViewById(R.id.error_msg);
-        errorMsg1 = view.findViewById(R.id.error_msg1);
-        errorImage = view.findViewById(R.id.error_image);
-        headerTextvw = view.findViewById(R.id.header_textvw);
+    private void setUpData(View view) {
+       /* ArrayList<BarData> dataList = new ArrayList<>();
 
-        headerTextvw.setVisibility(View.GONE);
-        errorMsg1.setVisibility(View.VISIBLE);
-        errorMsg.setVisibility(View.VISIBLE);
-        errorImage.setVisibility(View.VISIBLE);
+        BarData data = new BarData("Sep", 3.4f, "3.4€");
+        dataList.add(data);
+
+        data = new BarData("Oct", 8f, "8€");
+        dataList.add(data);
+
+        data = new BarData("Nov", 1.8f, "1.8€");
+        dataList.add(data);
+
+        data = new BarData("Dec", 7.3f, "7.3€");
+        dataList.add(data);
+
+        data = new BarData("Jan", 6.2f, "6.2€");
+        dataList.add(data);
+
+        data = new BarData("Feb", 3.3f, "3.3€");
+        dataList.add(data);
+
+        ChartProgressBar mChart = (ChartProgressBar) view.findViewById(R.id.ChartProgressBar);
+
+        mChart.setDataList(dataList);*/
+       // mChart.build();
     }
 }
