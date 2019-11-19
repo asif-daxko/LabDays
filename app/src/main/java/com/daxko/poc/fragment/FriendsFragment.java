@@ -28,7 +28,7 @@ public class FriendsFragment extends Fragment {
     }
 
     private void setUpdata() {
-        errorMsg = view.findViewById(R.id.error_msg);
+        /*errorMsg = view.findViewById(R.id.error_msg);
         errorMsg1 = view.findViewById(R.id.error_msg1);
         errorImage = view.findViewById(R.id.error_image);
         headerTextvw = view.findViewById(R.id.header_textvw);
@@ -36,6 +36,6 @@ public class FriendsFragment extends Fragment {
         headerTextvw.setVisibility(View.GONE);
         errorMsg1.setVisibility(View.VISIBLE);
         errorMsg.setVisibility(View.VISIBLE);
-        errorImage.setVisibility(View.VISIBLE);
+        errorImage.setVisibility(View.VISIBLE);*/
     }
 }
