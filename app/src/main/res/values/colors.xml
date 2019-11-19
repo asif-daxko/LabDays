@@ -10,4 +10,8 @@
     <color name="light_grey">#F8F5F5</color>
     <color name="grey">#6B6767</color>
     <color name="dark_grey">#A09898</color>
+    <color name="green">#00E100</color>
+    <color name="color_light_black">#151515</color>
+    <color name="color_text_grey">#B0B0B0</color>
+
 </resources>
