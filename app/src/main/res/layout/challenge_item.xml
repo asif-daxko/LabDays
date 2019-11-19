@@ -14,7 +14,7 @@
         app:layout_constraintStart_toStartOf="@+id/guideline">
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/challenge_name"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
@@ -43,8 +43,8 @@
             android:textSize="12sp"
             android:textAllCaps="true"
             android:textAlignment="center"
-            app:layout_constraintStart_toStartOf="@+id/textView2"
-            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+            app:layout_constraintStart_toStartOf="@+id/challenge_name"
+            app:layout_constraintTop_toBottomOf="@+id/challenge_name" />
 
         <TextView
             android:id="@+id/textView13"
@@ -53,9 +53,9 @@
             android:layout_marginTop="8dp"
             android:text="A Super-Duper challenger title will be awarded to those participants who will qualify the 12 months challenge in the calendar year."
             android:textColor="@color/light_grey"
-            app:layout_constraintEnd_toEndOf="@+id/textView2"
+            app:layout_constraintEnd_toEndOf="@+id/challenge_name"
             app:layout_constraintHorizontal_bias="0.507"
-            app:layout_constraintStart_toStartOf="@+id/textView2"
+            app:layout_constraintStart_toStartOf="@+id/challenge_name"
             app:layout_constraintTop_toBottomOf="@+id/status" />
 
         <TextView

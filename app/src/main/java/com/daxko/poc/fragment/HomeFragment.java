@@ -13,11 +13,13 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.daxko.poc.R;
 import com.daxko.poc.activity.ChallengeDetailActivity;
+import com.daxko.poc.activity.LevelDescriptionActivity;
 import com.daxko.poc.adapter.CardAdapter;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.Scopes;
@@ -47,8 +49,10 @@ import static android.app.Activity.RESULT_OK;
 public class HomeFragment extends Fragment implements GoogleApiClient.ConnectionCallbacks,
         GoogleApiClient.OnConnectionFailedListener, OnDataPointListener {
     View view;
-    TextView timeTxtvw, txtSteps;
+    TextView timeTxtvw, txtSteps,coinTextvw;
+    TextView startSeekbar,seekbarEnd;
     RecyclerView cardsRecyclerview;
+    ConstraintLayout levelCard;
     SeekBar seekBar;
     private static final String TAG = ChallengeDetailActivity.class.getSimpleName();
     private GoogleApiClient mGoogleApiClient;
@@ -74,7 +78,11 @@ public class HomeFragment extends Fragment implements GoogleApiClient.Connection
         seekBar = view.findViewById(R.id.seekBar);
         timeTxtvw = view.findViewById(R.id.time_txtvw);
         txtSteps = view.findViewById(R.id.txtSteps);
+        startSeekbar = view.findViewById(R.id.start_seekbar);
+        seekbarEnd = view.findViewById(R.id.seekbar_end);
+        coinTextvw = view.findViewById(R.id.textView8);
         cardsRecyclerview = view.findViewById(R.id.cards_recyclerview);
+        levelCard = view.findViewById(R.id.level_card);
 
 
         connectGoogleClient();
@@ -88,6 +96,12 @@ public class HomeFragment extends Fragment implements GoogleApiClient.Connection
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
                 return true;
+            }
+        });
+        levelCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getContext(), LevelDescriptionActivity.class));
             }
         });
     }
@@ -198,15 +212,39 @@ public class HomeFragment extends Fragment implements GoogleApiClient.Connection
                     if (step_value == 0) {
                         return;
                     }
-//                    float steps_today = step_value - originalvalue;
-                    float steps_today = step_value;
-                    seekBar.setProgress(steps_today >= 1000 ? (int) steps_today / 1000 : 0);
 
-                    txtSteps.setText(steps_today + "");
+                    coinCalculation(step_value);
+//                    float steps_today = step_value - originalvalue;
+                    //float steps_today = step_value;
+
                     //Toast.makeText(getApplicationContext(), "Field: " + field.getName() + " Value: " + value, Toast.LENGTH_SHORT).show();
                 }
             });
         }
+    }
+
+    private void coinCalculation(int step_value) {
+        int coins=step_value >= 1000 ? (int) step_value / 1000 : 0;
+        if(coins>10 && coins<=20){
+            updateSeekbar(10,20);
+        }else if(coins>20 && coins<=30){
+            updateSeekbar(20,30);
+        }else if(coins>30 && coins<=40){
+            updateSeekbar(30,40);
+        }else if(coins>40 && coins<=50){
+            updateSeekbar(40,50);
+        }else {
+            updateSeekbar(0,10);
+        }
+        seekBar.setProgress(coins);
+        coinTextvw.setText(coins+"");
+        txtSteps.setText(step_value + "");
+    }
+
+    private void updateSeekbar(int progressstart,int progressend) {
+            seekBar.setMax(progressend);
+            startSeekbar.setText(progressstart+"");
+            seekbarEnd.setText(progressend+"");
     }
 
     @Override

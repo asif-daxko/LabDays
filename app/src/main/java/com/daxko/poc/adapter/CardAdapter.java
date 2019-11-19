@@ -15,9 +15,11 @@ import com.daxko.poc.R;
 
 public class CardAdapter extends RecyclerView.Adapter<CardAdapter.VH> {
     Context context;
+    String[] itemTypeArray;
 
     public CardAdapter(Context context) {
         this.context=context;
+        this.itemTypeArray=context.getResources().getStringArray(R.array.home_screen_item);
     }
 
     @NonNull
@@ -29,18 +31,21 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.VH> {
 
     @Override
     public void onBindViewHolder(@NonNull VH holder, int position) {
-
+        holder.itemTypeTextvw.setText(itemTypeArray[position]);
     }
 
     @Override
     public int getItemCount() {
-        return 4;
+        return itemTypeArray.length;
     }
 
     public class VH extends RecyclerView.ViewHolder {
+        TextView itemTypeTextvw;
 
         public VH(@NonNull View itemView) {
             super(itemView);
+
+            itemTypeTextvw=itemView.findViewById(R.id.item_type_textvw);
         }
     }
 }
