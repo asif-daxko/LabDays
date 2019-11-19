@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#00d2ff</color>
+    <color name="colorPrimary">#51B64E</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
-    <color name="light_blue">#00D2FF</color>
+    <color name="light_blue">#51B64E</color>
     <color name="selected_tab_color">#d3d3d3</color>
     <color name="light_grey">#F8F5F5</color>
     <color name="grey">#6B6767</color>

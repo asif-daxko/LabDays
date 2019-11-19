@@ -49,7 +49,7 @@ import static android.app.Activity.RESULT_OK;
 public class HomeFragment extends Fragment implements GoogleApiClient.ConnectionCallbacks,
         GoogleApiClient.OnConnectionFailedListener, OnDataPointListener {
     View view;
-    TextView timeTxtvw, txtSteps;
+    TextView timeTxtvw, txtSteps,coinTextvw;
     RecyclerView cardsRecyclerview;
     ConstraintLayout levelCard;
     SeekBar seekBar;
@@ -77,6 +77,7 @@ public class HomeFragment extends Fragment implements GoogleApiClient.Connection
         seekBar = view.findViewById(R.id.seekBar);
         timeTxtvw = view.findViewById(R.id.time_txtvw);
         txtSteps = view.findViewById(R.id.txtSteps);
+        coinTextvw = view.findViewById(R.id.textView8);
         cardsRecyclerview = view.findViewById(R.id.cards_recyclerview);
         levelCard = view.findViewById(R.id.level_card);
 
@@ -211,6 +212,7 @@ public class HomeFragment extends Fragment implements GoogleApiClient.Connection
 //                    float steps_today = step_value - originalvalue;
                     //float steps_today = step_value;
                     seekBar.setProgress(step_value >= 1000 ? (int) step_value / 1000 : 0);
+                    coinTextvw.setText((step_value >= 1000 ? (int) step_value / 1000 : 0)+"");
 
                     txtSteps.setText(step_value + "");
                     //Toast.makeText(getApplicationContext(), "Field: " + field.getName() + " Value: " + value, Toast.LENGTH_SHORT).show();
