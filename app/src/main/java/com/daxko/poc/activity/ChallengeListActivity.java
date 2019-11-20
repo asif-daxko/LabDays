@@ -15,7 +15,7 @@ public class ChallengeListActivity extends AppCompatActivity implements Challeng
     RecyclerView challengesRecyclerview;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_challenge_list);
 
