@@ -10,7 +10,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.daxko.poc.R;
 
@@ -22,14 +21,14 @@ public class FriendsFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        view = LayoutInflater.from(getContext()).inflate(R.layout.reward_log_screen, container, false);
+        view = LayoutInflater.from(getContext()).inflate(R.layout.fragment_reward, container, false);
 
         setUpdata();
         return view;
     }
 
     private void setUpdata() {
-        errorMsg = view.findViewById(R.id.error_msg);
+        /*errorMsg = view.findViewById(R.id.error_msg);
         errorMsg1 = view.findViewById(R.id.error_msg1);
         errorImage = view.findViewById(R.id.error_image);
         headerTextvw = view.findViewById(R.id.header_textvw);
@@ -37,6 +36,6 @@ public class FriendsFragment extends Fragment {
         headerTextvw.setVisibility(View.GONE);
         errorMsg1.setVisibility(View.VISIBLE);
         errorMsg.setVisibility(View.VISIBLE);
-        errorImage.setVisibility(View.VISIBLE);
+        errorImage.setVisibility(View.VISIBLE);*/
     }
 }

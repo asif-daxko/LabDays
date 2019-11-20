@@ -37,4 +37,5 @@ dependencies {
     implementation 'androidx.multidex:multidex:2.0.1'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.10.0'
     implementation 'com.google.android.gms:play-services:12.0.1'
+    implementation 'com.github.PhilJay:MPAndroidChart:v2.2.4'
 }
