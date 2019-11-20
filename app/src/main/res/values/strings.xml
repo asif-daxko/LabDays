@@ -15,8 +15,9 @@
         <item>T-shirt</item>
     </string-array>
     <string-array name="challenges_name">
-        <item>Cycling Challenge</item>
-        <item>1,000 Steps daily challenge</item>
+        <item>1,000 mile Cycle Challenge</item>
+        <item>Weight Loss Challenge</item>
+        <item>1,000 Steps Daily Challenge</item>
         <item>Swimming Challenge</item>
     </string-array>
     <string-array name="home_screen_item">

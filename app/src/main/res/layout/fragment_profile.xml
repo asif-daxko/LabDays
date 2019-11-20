@@ -1,181 +1,193 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:background="@color/black"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/black">
 
-    <TextView
-        android:id="@+id/textView_name_initials"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:fontFamily="@font/roboto_bold"
-        android:background="@drawable/name_background"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:text="AK"
-        android:textColor="@color/white"
-        android:gravity="center"
-        android:textSize="20sp"
-        android:layout_marginTop="20dp"/>
-
-    <TextView
-        android:id="@+id/textView_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/roboto_regular"
-        app:layout_constraintTop_toBottomOf="@+id/textView_name_initials"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        android:text="Asif Khan"
-        android:textSize="16sp"
-        android:textColor="@color/white"
-        android:layout_marginTop="10dp"/>
-
-    <TextView
-        android:id="@+id/textView_username"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/roboto_regular"
-        app:layout_constraintTop_toBottomOf="@+id/textView_name"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        android:text="asif.khan"
-        android:textColor="@color/white"
-        android:textSize="12sp"/>
-
-    <TextView
-        android:id="@+id/textView_level"
-        android:layout_width="80dp"
-        android:layout_height="60dp"
-        app:layout_constraintTop_toBottomOf="@+id/textView_name"
-        android:background="@drawable/rank_background"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        android:text="LEVEL \n1"
-        android:gravity="center"
-        android:fontFamily="@font/roboto_bold"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        android:layout_marginTop="30dp"/>
-
-    <View
-        android:id="@+id/view_top_divider"
-        app:layout_constraintTop_toBottomOf="@+id/textView_level"
-        android:layout_marginTop="20dp"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#1D1D1D"/>
+        android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/textView_total_challenges"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:textColor="@color/white"
-        android:fontFamily="@font/roboto_bold"
-        android:textSize="22sp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="@+id/view_mid_divider"
-        app:layout_constraintTop_toBottomOf="@+id/view_top_divider"
-        android:text="12"/>
+        <TextView
+            android:id="@+id/textView_name_initials"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/name_background"
+            android:fontFamily="@font/roboto_bold"
+            android:gravity="center"
+            android:text="AK"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView_total_challenges_label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="#6C6C6C"
-        android:fontFamily="@font/roboto_regular"
-        android:textSize="12sp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="@+id/view_mid_divider"
-        app:layout_constraintTop_toBottomOf="@+id/textView_total_challenges"
-        android:text="Total Challenges"/>
+        <TextView
+            android:id="@+id/textView_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/roboto_regular"
+            android:text="Asif Khan"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView_name_initials" />
 
-    <View
-        android:id="@+id/view_mid_divider"
-        app:layout_constraintTop_toBottomOf="@+id/textView_level"
-        android:layout_marginTop="20dp"
-        android:layout_width="1dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_height="80dp"
-        android:background="#1D1D1D"/>
+        <TextView
+            android:id="@+id/textView_username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_regular"
+            android:text="asif.khan"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView_name" />
 
-    <TextView
-        android:id="@+id/textView_total_coins"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:textColor="@color/white"
-        android:fontFamily="@font/roboto_bold"
-        android:textSize="22sp"
-        app:layout_constraintLeft_toLeftOf="@+id/view_mid_divider"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view_top_divider"
-        android:text="50 DC"/>
+        <RelativeLayout
+            android:id="@+id/relativeLayout"
+            android:layout_width="80dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/rank_background"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView_name">
 
-    <TextView
-        android:id="@+id/textView_total_coins_label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="#6C6C6C"
-        android:fontFamily="@font/roboto_regular"
-        android:textSize="12sp"
-        app:layout_constraintLeft_toLeftOf="@+id/view_mid_divider"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView_total_challenges"
-        android:text="Total Coins earned"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/roboto_regular"
+                android:text="LEVEL"
+                android:textColor="@color/black"
+                android:textSize="8sp" />
 
-    <View
-        android:id="@+id/view_bottom_divider"
-        app:layout_constraintTop_toBottomOf="@+id/textView_total_challenges_label"
-        android:layout_marginTop="22dp"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#1D1D1D"/>
+            <TextView
+                android:id="@+id/textView_level"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="center"
+                android:text="2"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
 
-    <TextView
-        android:id="@+id/textView_progress_label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:textColor="@color/white"
-        android:fontFamily="@font/roboto_bold"
-        android:textSize="18sp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginLeft="30dp"
-        app:layout_constraintTop_toBottomOf="@+id/view_bottom_divider"
-        android:text="Progress"/>
+        </RelativeLayout>
 
-    <!--<com.hadiidbouk.charts.ChartProgressBar
-        android:id="@+id/ChartProgressBar"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_centerInParent="true"
-        android:gravity="center"
-        android:layout_margin="30dp"
-        app:layout_constraintTop_toBottomOf="@+id/textView_progress_label"
-        app:hdBarCanBeClick="true"
-        app:hdBarHeight="170dp"
-        app:hdBarWidth="7dp"
-        app:hdBarRadius="10dp"
-        app:hdMaxValue="10"
-        app:hdEmptyColor="@color/empty"
-        app:hdProgressColor="@color/progress"
-        app:hdProgressClickColor="@color/progress_click"
-        app:hdPinBackgroundColor="@color/pin_background"
-        app:hdPinTextColor="@color/pin_text"
-        app:hdPinPaddingBottom="5dp"
-        app:hdBarTitleColor="@color/bar_title_color"
-        app:hdBarTitleTxtSize="12sp"
-        app:hdPinTxtSize="17sp"
-        app:hdPinMarginTop="10dp"
-        app:hdPinMarginBottom="55dp"
-        app:hdPinMarginEnd="22dp"
-        app:hdBarTitleMarginTop="9dp"
-        app:hdProgressDisableColor="@color/progress_disable"
-        app:hdBarTitleSelectedColor="@color/black"/>-->
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout_internal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@color/color_light_black"
+            app:layout_constraintTop_toBottomOf="@+id/relativeLayout">
+
+            <View
+                android:id="@+id/view_top_divider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#1D1D1D"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView_total_challenges"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/roboto_bold"
+                android:text="12"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="@+id/view_mid_divider"
+                app:layout_constraintTop_toBottomOf="@+id/view_top_divider" />
+
+            <TextView
+                android:id="@+id/textView_total_challenges_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_regular"
+                android:text="Total Challenges"
+                android:textColor="@color/color_text_grey"
+                android:textSize="12sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="@+id/view_mid_divider"
+                app:layout_constraintTop_toBottomOf="@+id/textView_total_challenges" />
+
+            <View
+                android:id="@+id/view_mid_divider"
+                android:layout_width="1dp"
+                android:layout_height="80dp"
+                android:background="#1D1D1D"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView_total_coins"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/roboto_bold"
+                android:text="50 DC"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                app:layout_constraintLeft_toLeftOf="@+id/view_mid_divider"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view_top_divider" />
+
+            <TextView
+                android:id="@+id/textView_total_coins_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_regular"
+                android:text="Total Coins earned"
+                android:textColor="@color/color_text_grey"
+                android:textSize="12sp"
+                app:layout_constraintLeft_toLeftOf="@+id/view_mid_divider"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView_total_challenges" />
+
+            <View
+                android:id="@+id/view_bottom_divider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="22dp"
+                android:background="#1D1D1D"
+                app:layout_constraintTop_toBottomOf="@+id/textView_total_challenges_label" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/textView_progress_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="Progress"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout_internal" />
+
+        <com.github.mikephil.charting.charts.BarChart
+            android:id="@+id/barchart"
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_height="200dp"
+            android:background="@color/black"
+            app:layout_constraintTop_toBottomOf="@+id/textView_progress_label" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

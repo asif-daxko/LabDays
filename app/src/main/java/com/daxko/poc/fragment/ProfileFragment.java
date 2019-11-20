@@ -1,17 +1,29 @@
 package com.daxko.poc.fragment;
 
+import android.graphics.Color;
 import android.os.Bundle;
+import android.text.SpannableString;
+import android.text.style.ForegroundColorSpan;
+import android.text.style.RelativeSizeSpan;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.daxko.poc.R;
+import com.github.mikephil.charting.charts.BarChart;
+import com.github.mikephil.charting.data.BarData;
+import com.github.mikephil.charting.data.BarDataSet;
+import com.github.mikephil.charting.data.BarEntry;
+import com.github.mikephil.charting.formatter.ValueFormatter;
+import com.github.mikephil.charting.utils.ColorTemplate;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ProfileFragment extends Fragment {
     @Nullable
@@ -24,29 +36,32 @@ public class ProfileFragment extends Fragment {
     }
 
     private void setUpData(View view) {
-       /* ArrayList<BarData> dataList = new ArrayList<>();
 
-        BarData data = new BarData("Sep", 3.4f, "3.4€");
-        dataList.add(data);
+        TextView textViewLevel = (TextView) view.findViewById(R.id.textView_level);
 
-        data = new BarData("Oct", 8f, "8€");
-        dataList.add(data);
+        BarChart chart =(BarChart) view.findViewById(R.id.barchart);
 
-        data = new BarData("Nov", 1.8f, "1.8€");
-        dataList.add(data);
+        List stepsTaken = new ArrayList();
 
-        data = new BarData("Dec", 7.3f, "7.3€");
-        dataList.add(data);
+        stepsTaken.add(new BarEntry(1240f, 0));
+        stepsTaken.add(new BarEntry(1040f, 1));
+        stepsTaken.add(new BarEntry(1437f, 2));
+        stepsTaken.add(new BarEntry(1245f, 3));
+        stepsTaken.add(new BarEntry(1369f, 4));
 
-        data = new BarData("Jan", 6.2f, "6.2€");
-        dataList.add(data);
+        List dates = new ArrayList();
 
-        data = new BarData("Feb", 3.3f, "3.3€");
-        dataList.add(data);
+        dates.add("26 Oct'19");
+        dates.add("02 Nov'19");
+        dates.add("09 Nov'19");
+        dates.add("11 Nov'19");
+        dates.add("18 Nov'19");
 
-        ChartProgressBar mChart = (ChartProgressBar) view.findViewById(R.id.ChartProgressBar);
-
-        mChart.setDataList(dataList);*/
-       // mChart.build();
+        BarDataSet bardataset = new BarDataSet(stepsTaken, "Steps");
+        chart.animateY(3000);
+        BarData data = new BarData(dates, bardataset);
+        bardataset.setValueTextColor(Color.parseColor("#FFFFFF"));
+        bardataset.setColors(ColorTemplate.COLORFUL_COLORS);
+        chart.setData(data);
     }
 }
