@@ -56,9 +56,9 @@ public class ChallengeListActivity extends AppCompatActivity implements Challeng
         data4.setChallengeDetail("Take out your swim suits and get ready for the upcoming swimming challenge");
         data4.setChallengeDate("11 Nov 2019");
 
-        challengeList.add(data1);
-        challengeList.add(data2);
         challengeList.add(data3);
+        challengeList.add(data2);
+        challengeList.add(data1);
         challengeList.add(data4);
 
         return challengeList;
