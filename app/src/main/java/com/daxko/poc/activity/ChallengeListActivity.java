@@ -120,8 +120,6 @@ public class ChallengeListActivity extends AppCompatActivity implements View.OnC
                 ChallengeListActivity.this.openHelpCenter(ChallengeListActivity.this);
             }
         }));*/
-        challengesRecyclerview.setAdapter(new ChallengesAdapter(ChallengeListActivity.this,this,
-                prepareChallengeList()));
     }
 
     private List<ChallengeData> prepareChallengeList() {
