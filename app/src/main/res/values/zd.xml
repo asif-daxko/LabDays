@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="zd_url">https://labdays.zendesk.com</string>
+    <string name="zd_appid">95b57579c9dc8b374b411f9484eff001ae181ed6f0260e57</string>
+    <string name="zd_oauth">mobile_sdk_client_b0507da732681fbba154</string>
+
+    <string name="zopim_account_id">replace_me_chat_account_id</string>
+</resources>

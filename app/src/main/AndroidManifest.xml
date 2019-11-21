@@ -20,8 +20,10 @@
         android:label="@string/app_name"
         android:roundIcon="@drawable/app_logo"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"
-        tools:replace="android:name">
+        tools:replace="android:name"
+        android:theme="@style/AppTheme">
+        <activity android:name=".activity.SearchFriendActivity"
+            android:theme="@style/Theme.Design.Light.NoActionBar"></activity>
         <activity android:name=".activity.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -37,11 +39,36 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".activity.ChallengeListActivity"/>
         <activity android:name=".activity.ChallengeRewardActivity" />
-        <activity android:name=".activity.ChallengeDetailActivity" />
+        <activity android:name=".activity.ChallengeDetailActivity"></activity>
+
+
+        <!--
+       ========================
+       Urban Airship - Receiver
+       ========================
+       -->
+
+        <!-- OPTIONAL, if you want to receive push, push opened and registration completed intents -->
+        <!--<receiver
+            android:name="push.IntentReceiver"
+            android:exported="false">
+
+            <intent-filter>
+                <action android:name="com.urbanairship.push.CHANNEL_UPDATED" />
+                <action android:name="com.urbanairship.push.OPENED" />
+                <action android:name="com.urbanairship.push.RECEIVED" />
+                <action android:name="com.urbanairship.push.DISMISSED" />
+
+                <category android:name="${applicationId}" />
+            </intent-filter>
+        </receiver>-->
 
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
+
+
+
     </application>
 
 </manifest>

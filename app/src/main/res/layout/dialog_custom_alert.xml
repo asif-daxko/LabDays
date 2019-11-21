@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="300dp"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:paddingTop="@dimen/dimen_30dp"
+    android:paddingBottom="@dimen/dimen_30dp"
+    android:paddingLeft="@dimen/dimen_5dp"
+    android:paddingStart="@dimen/dimen_5dp"
+    android:paddingEnd="@dimen/dimen_5dp"
+    android:paddingRight="@dimen/dimen_5dp"
+    android:background="@drawable/border_round">
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:id="@+id/btn_knowledge_base"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:background="@drawable/button_background"
+        android:text="@string/fragment_main_btn_knowledge_base"
+        android:layout_marginLeft="@dimen/dimen_25dp"
+        android:layout_marginStart="@dimen/dimen_25dp"
+        android:layout_marginRight="@dimen/dimen_25dp"
+        android:layout_marginEnd="@dimen/dimen_25dp"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:id="@+id/btn_contact_us"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:background="@drawable/button_background"
+        android:text="@string/fragment_main_btn_contact_us"
+        android:layout_marginTop="@dimen/dimen_10dp"
+        android:layout_marginLeft="@dimen/dimen_25dp"
+        android:layout_marginStart="@dimen/dimen_25dp"
+        android:layout_marginRight="@dimen/dimen_25dp"
+        android:layout_marginEnd="@dimen/dimen_25dp"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:id="@+id/btn_my_tickets"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:background="@drawable/button_background"
+        android:layout_marginTop="@dimen/dimen_10dp"
+        android:layout_marginLeft="@dimen/dimen_25dp"
+        android:layout_marginStart="@dimen/dimen_25dp"
+        android:layout_marginRight="@dimen/dimen_25dp"
+        android:layout_marginEnd="@dimen/dimen_25dp"
+        android:text="@string/fragment_main_btn_my_tickets"/>
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_answer_bot"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:background="@drawable/button_background"
+        android:text="@string/fragment_main_btn_answer_bot"
+        android:layout_marginTop="@dimen/dimen_10dp"
+        android:layout_marginLeft="@dimen/dimen_25dp"
+        android:layout_marginStart="@dimen/dimen_25dp"
+        android:layout_marginRight="@dimen/dimen_25dp"
+        android:layout_marginEnd="@dimen/dimen_25dp"/>
+
+
+</LinearLayout>
