@@ -108,7 +108,7 @@
             android:thumbTint="@color/light_blue"
             android:progress="0"
             android:layout_marginTop="4dp"
-            android:max="5"
+            android:max="10"
             android:progressTint="@color/light_blue"
             app:layout_constraintEnd_toStartOf="@+id/guideline2"
             app:layout_constraintHorizontal_bias="0.498"
@@ -243,7 +243,7 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/start_seekbar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -254,12 +254,12 @@
             app:layout_constraintTop_toBottomOf="@+id/seekBar" />
 
         <TextView
-            android:id="@+id/textView14"
+            android:id="@+id/seekbar_end"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="16dp"
             android:layout_marginEnd="16dp"
-            android:text="5"
+            android:text="10"
             android:textColor="@color/light_blue"
             app:layout_constraintEnd_toStartOf="@+id/guideline2"
             app:layout_constraintTop_toBottomOf="@+id/seekBar" />

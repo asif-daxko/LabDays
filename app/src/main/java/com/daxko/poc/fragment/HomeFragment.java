@@ -2,6 +2,7 @@ package com.daxko.poc.fragment;
 
 import android.content.Intent;
 import android.content.IntentSender;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -12,19 +13,26 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 import com.daxko.poc.R;
 import com.daxko.poc.activity.ChallengeDetailActivity;
+import com.daxko.poc.activity.FitnessRecordActivity;
+import com.daxko.poc.activity.LevelDescriptionActivity;
 import com.daxko.poc.adapter.CardAdapter;
+import com.daxko.poc.interfaces.ChallengeClickListener;
+import com.daxko.poc.utility.AppPrefs;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.Scopes;
 import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.common.api.PendingResult;
 import com.google.android.gms.common.api.ResultCallback;
 import com.google.android.gms.common.api.Scope;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.fitness.Fitness;
 import com.google.android.gms.fitness.data.DataPoint;
+import com.google.android.gms.fitness.data.DataSet;
 import com.google.android.gms.fitness.data.DataSource;
 import com.google.android.gms.fitness.data.DataType;
 import com.google.android.gms.fitness.data.Field;
@@ -32,21 +40,25 @@ import com.google.android.gms.fitness.data.Value;
 import com.google.android.gms.fitness.request.DataSourcesRequest;
 import com.google.android.gms.fitness.request.OnDataPointListener;
 import com.google.android.gms.fitness.request.SensorRequest;
+import com.google.android.gms.fitness.result.DailyTotalResult;
 import com.google.android.gms.fitness.result.DataSourcesResult;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 
 import static android.app.Activity.RESULT_CANCELED;
 import static android.app.Activity.RESULT_OK;
 
 public class HomeFragment extends Fragment implements GoogleApiClient.ConnectionCallbacks,
-        GoogleApiClient.OnConnectionFailedListener, OnDataPointListener {
+        GoogleApiClient.OnConnectionFailedListener, OnDataPointListener, ChallengeClickListener {
     View view;
-    TextView timeTxtvw, txtSteps;
+    TextView timeTxtvw, txtSteps, coinTextvw;
+    TextView startSeekbar, seekbarEnd;
     RecyclerView cardsRecyclerview;
+    ConstraintLayout levelCard;
     SeekBar seekBar;
     private static final String TAG = ChallengeDetailActivity.class.getSimpleName();
     private GoogleApiClient mGoogleApiClient;
@@ -69,14 +81,21 @@ public class HomeFragment extends Fragment implements GoogleApiClient.Connection
     }
 
     private void setData() {
+        int[] imagesArray = {R.drawable.place_marker, R.drawable.fire, R.drawable.icons_sand_clock, R.drawable.coin_blacknwhite};
+
         seekBar = view.findViewById(R.id.seekBar);
         timeTxtvw = view.findViewById(R.id.time_txtvw);
         txtSteps = view.findViewById(R.id.txtSteps);
+        startSeekbar = view.findViewById(R.id.start_seekbar);
+        seekbarEnd = view.findViewById(R.id.seekbar_end);
+        coinTextvw = view.findViewById(R.id.textView8);
         cardsRecyclerview = view.findViewById(R.id.cards_recyclerview);
+        levelCard = view.findViewById(R.id.level_card);
 
 
         connectGoogleClient();
-        cardsRecyclerview.setAdapter(new CardAdapter(getActivity()));
+
+        cardsRecyclerview.setAdapter(new CardAdapter(getActivity(), this, imagesArray));
         Date currentTime = Calendar.getInstance().getTime();
         SimpleDateFormat sdf = new SimpleDateFormat("hh:mm a");
         sdf.format(currentTime);
@@ -86,6 +105,12 @@ public class HomeFragment extends Fragment implements GoogleApiClient.Connection
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
                 return true;
+            }
+        });
+        levelCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getContext(), LevelDescriptionActivity.class));
             }
         });
     }
@@ -182,7 +207,7 @@ public class HomeFragment extends Fragment implements GoogleApiClient.Connection
         mGoogleApiClient.connect();
     }
 
-    int step_value;
+    private int step_value;
 
     @Override
     public void onDataPoint(DataPoint dataPoint) {
@@ -190,21 +215,46 @@ public class HomeFragment extends Fragment implements GoogleApiClient.Connection
             final Value value = dataPoint.getValue(field);
             step_value = Integer.parseInt(value + "");
 
-            getActivity().runOnUiThread(new Runnable() {
+            Objects.requireNonNull(getActivity()).runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
                     if (step_value == 0) {
                         return;
                     }
-//                    float steps_today = step_value - originalvalue;
-                    float steps_today = step_value;
-                    seekBar.setProgress(steps_today >= 1000 ? (int) steps_today / 1000 : 0);
 
-                    txtSteps.setText(steps_today + "");
+                    coinCalculation(step_value);
+//                    float steps_today = step_value - originalvalue;
+                    //float steps_today = step_value;
+
                     //Toast.makeText(getApplicationContext(), "Field: " + field.getName() + " Value: " + value, Toast.LENGTH_SHORT).show();
                 }
             });
         }
+    }
+
+    private void coinCalculation(int step_value) {
+        int coins = step_value >= 1000 ? (int) step_value / 1000 : 0;
+        if (coins > 10 && coins <= 20) {
+            updateSeekbar(10, 20);
+        } else if (coins > 20 && coins <= 30) {
+            updateSeekbar(20, 30);
+        } else if (coins > 30 && coins <= 40) {
+            updateSeekbar(30, 40);
+        } else if (coins > 40 && coins <= 50) {
+            updateSeekbar(40, 50);
+        } else {
+            updateSeekbar(0, 10);
+        }
+        seekBar.setProgress(coins);
+        coinTextvw.setText(coins + "");
+        txtSteps.setText(step_value + "");
+        AppPrefs.getInstance(getActivity()).setSteps(step_value);
+    }
+
+    private void updateSeekbar(int progressstart, int progressend) {
+        seekBar.setMax(progressend);
+        startSeekbar.setText(progressstart + "");
+        seekbarEnd.setText(progressend + "");
     }
 
     @Override
@@ -226,5 +276,40 @@ public class HomeFragment extends Fragment implements GoogleApiClient.Connection
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
         outState.putBoolean(AUTH_PENDING, authInProgress);
+    }
+
+    @Override
+    public void OnItemClick(View v, int position) {
+        Intent intent = new Intent(getActivity(), FitnessRecordActivity.class);
+        intent.putExtra("pos", position);
+        startActivity(intent);
+    }
+
+    private class FetchCalorieAsync extends AsyncTask<Object, Object, Long> {
+        protected Long doInBackground(Object... params) {
+            long total = 0;
+            PendingResult<DailyTotalResult> result = Fitness.HistoryApi.readDailyTotal(mGoogleApiClient, DataType.TYPE_CALORIES_EXPENDED);
+            DailyTotalResult totalResult = result.await(30, TimeUnit.SECONDS);
+            if (totalResult.getStatus().isSuccess()) {
+                DataSet totalSet = totalResult.getTotal();
+                if (totalSet != null) {
+                    total = totalSet.isEmpty()
+                            ? 0
+                            : totalSet.getDataPoints().get(0).getValue(Field.FIELD_CALORIES).asInt();
+                }
+            } else {
+                Log.w(TAG, "There was a problem getting the calories.");
+            }
+            return total;
+        }
+
+
+        @Override
+        protected void onPostExecute(Long aLong) {
+            super.onPostExecute(aLong);
+            //Total calories burned for that day
+            Log.i(TAG, "Total calories: " + aLong);
+
+        }
     }
 }
