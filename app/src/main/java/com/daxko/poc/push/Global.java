@@ -3,8 +3,6 @@ package com.daxko.poc.push;
 import android.app.Application;
 
 import com.daxko.poc.R;
-import com.urbanairship.UAirship;
-import com.urbanairship.push.notifications.DefaultNotificationFactory;
 import com.zendesk.logger.Logger;
 import com.zendesk.util.StringUtils;
 
@@ -46,25 +44,6 @@ public class Global extends Application {
         );
 
         Support.INSTANCE.init(Zendesk.INSTANCE);
-        initUrbanAirship();
-    }
-
-    private void initUrbanAirship() {
-
-        // Initialize Urban Airship
-        UAirship.takeOff(this);
-
-        // Enable push notification
-        UAirship.shared().getPushManager().setUserNotificationsEnabled(true);
-
-        // 'ic_chat_bubble_outline_black_24dp' should be displayed as notification icon
-        final DefaultNotificationFactory defaultNotificationFactory = new DefaultNotificationFactory(getApplicationContext());
-        defaultNotificationFactory.setSmallIconId(R.drawable.ic_date);
-        UAirship.shared().getPushManager().setNotificationFactory(defaultNotificationFactory);
-    }
-
-    static boolean isMissingCredentials() {
-        return missingCredentials;
     }
 
 }

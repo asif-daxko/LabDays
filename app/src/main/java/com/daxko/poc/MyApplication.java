@@ -9,8 +9,6 @@ import androidx.multidex.MultiDexApplication;
 
 import com.daxko.poc.storage.AppStorage;
 import com.squareup.picasso.Picasso;
-import com.urbanairship.UAirship;
-import com.urbanairship.push.notifications.DefaultNotificationFactory;
 import com.zendesk.logger.Logger;
 import com.zopim.android.sdk.api.ZopimChat;
 
@@ -49,7 +47,6 @@ public class MyApplication extends MultiDexApplication {
                 getResources().getString(R.string.zd_oauth));
         Support.INSTANCE.init(Zendesk.INSTANCE);
         AnswerBot.INSTANCE.init(Zendesk.INSTANCE, Support.INSTANCE);
-        initUrbanAirship();
 
         // Init Chat SDK
         if ("replace_me_chat_account_id".equals(getString(R.string.zopim_account_id))) {
@@ -59,22 +56,5 @@ public class MyApplication extends MultiDexApplication {
         }
         ZopimChat.init(getString(R.string.zopim_account_id));
     }
-
-    private void initUrbanAirship() {
-
-        // Initialize Urban Airship
-        UAirship.takeOff(this);
-
-        // Enable push notification
-        UAirship.shared().getPushManager().setUserNotificationsEnabled(true);
-
-        // 'ic_chat_bubble_outline_black_24dp' should be displayed as notification icon
-        final DefaultNotificationFactory defaultNotificationFactory = new DefaultNotificationFactory(getApplicationContext());
-        defaultNotificationFactory.setSmallIconId(R.drawable.ic_date);
-        UAirship.shared().getPushManager().setNotificationFactory(defaultNotificationFactory);
-    }
-
-
-
 
 }

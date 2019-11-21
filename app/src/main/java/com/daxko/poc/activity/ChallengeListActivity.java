@@ -124,7 +124,7 @@ public class ChallengeListActivity extends AppCompatActivity implements View.OnC
     @Override
     protected void onResume() {
         super.onResume();
-        PushUtils.checkPlayServices(this);
+        //PushUtils.checkPlayServices(this);
     }
 
     @Override
@@ -202,37 +202,6 @@ public class ChallengeListActivity extends AppCompatActivity implements View.OnC
                 .show(ChallengeListActivity.this);
     }
 
-
-    private static class LoggedInClickListener implements View.OnClickListener {
-
-        final private View.OnClickListener onClickListener;
-
-        LoggedInClickListener(View.OnClickListener onClickListener) {
-            this.onClickListener = onClickListener;
-        }
-
-        @Override
-        public void onClick(View view) {
-            if (Zendesk.INSTANCE.isInitialized() && Zendesk.INSTANCE.getIdentity() != null) {
-                onClickListener.onClick(view);
-            } else {
-                showDialog(view.getContext());
-            }
-        }
-
-        private void showDialog(final Context context) {
-            AlertDialog.Builder builder = new AlertDialog.Builder(context);
-            builder.setMessage(R.string.dialog_auth_title)
-                    .setPositiveButton(R.string.dialog_auth_positive_btn, new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int id) {
-                            CreateProfileActivity.start(context);
-                        }
-                    })
-                    .setNegativeButton(R.string.dialog_auth_negative_btn, null);
-            builder.create().show();
-        }
-    }
 
     private void initialiseChatSdk() {
         final UserProfile profile = storage.getUserProfile();

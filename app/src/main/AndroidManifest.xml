@@ -30,26 +30,6 @@
         </activity>
         <activity android:name=".activity.ChallengeRewardActivity" />
         <activity android:name=".activity.ChallengeDetailActivity"></activity>
-        <activity
-            android:name=".activity.CreateProfileActivity"
-            android:label="Profile"
-            />
-
-
-        <service
-            android:name=".push.ZendeskFirebaseMessagingService"
-            android:exported="false">
-            <intent-filter>
-                <action android:name="com.google.firebase.MESSAGING_EVENT" />
-            </intent-filter>
-        </service>
-        <service
-            android:name=".push.ZendeskFirebaseInstanceIdService"
-            android:exported="false">
-            <intent-filter>
-                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
-            </intent-filter>
-        </service>
 
 
         <!--
