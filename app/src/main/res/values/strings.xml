@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">POC</string>
+    <string name="app_name">Daxko Rewards</string>
     <string name="daily_limit">Daily Limit</string>
     <string name="safe_zone">Safe Zone: 0 to 10 coins</string>
     <string name="title_activity_challenge_reward">ChallengeRewardActivity</string>
