@@ -2,20 +2,30 @@ package com.daxko.poc.utility;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.preference.PreferenceManager;
 
 public class AppPrefs {
 
     private static final String KEY_LAST_TIME_STAMP = "sp_last_timestamp";
+    private static final String Steps = "Steps";
+    private static AppPrefs preferenceManager;
+    private SharedPreferences preference;
 
-    public static void storeLong(Context context, long status) {
-        SharedPreferences.Editor prefsEditor = PreferenceManager.getDefaultSharedPreferences(context)
-                .edit();
-        prefsEditor.putLong(KEY_LAST_TIME_STAMP, status).commit();
+    public AppPrefs(Context context) {
+        preference = context.getSharedPreferences("IBAPP", Context.MODE_PRIVATE);
     }
 
-    public static long getLong(Context context) {
-        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
-        return prefs.getLong(KEY_LAST_TIME_STAMP, 0L);
+    public static AppPrefs getInstance(Context context) {
+        if (preferenceManager == null) {
+            preferenceManager = new AppPrefs(context);
+        }
+        return preferenceManager;
+    }
+
+    public long getSteps() {
+        return preference.getLong(Steps, 0L);
+    }
+
+    public void setSteps(long stepslength) {
+        preference.edit().putLong(Steps, stepslength).apply();
     }
 }

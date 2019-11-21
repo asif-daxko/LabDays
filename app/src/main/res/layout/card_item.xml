@@ -29,6 +29,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" >
             <ImageView
+                android:id="@+id/imageView"
                 android:src="@drawable/fire"
                 android:layout_gravity="center"
                 android:layout_width="20dp"
@@ -50,7 +51,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView13"
+        android:id="@+id/item_type_textvw"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Distance in kms"

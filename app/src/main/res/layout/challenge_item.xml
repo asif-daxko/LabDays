@@ -13,21 +13,32 @@
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintStart_toStartOf="@+id/guideline">
 
+        <ImageView
+            android:id="@+id/imageView_trophy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="4dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:src="@mipmap/trophy"/>
+
         <TextView
-            android:id="@+id/textView2"
-            android:layout_width="0dp"
+            android:id="@+id/challenge_name"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
             android:layout_marginLeft="4dp"
             android:layout_marginTop="4dp"
             android:layout_marginEnd="4dp"
             android:layout_marginRight="4dp"
+            android:fontFamily="@font/roboto_bold"
             android:text="Cycling Challenge"
             android:textColor="@color/light_blue"
             android:textSize="18sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintLeft_toRightOf="@+id/imageView_trophy"
+            app:layout_constraintTop_toTopOf="@+id/imageView_trophy" />
 
         <TextView
             android:id="@+id/status"
@@ -39,27 +50,29 @@
             android:paddingEnd="6dp"
             android:paddingTop="2dp"
             android:paddingBottom="2dp"
-            android:text="open"
+            android:text="Enroll"
+            android:fontFamily="@font/roboto_medium"
+            android:textColor="@color/black"
             android:textSize="12sp"
             android:textAllCaps="true"
             android:textAlignment="center"
-            app:layout_constraintStart_toStartOf="@+id/textView2"
-            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+            app:layout_constraintLeft_toRightOf="@+id/imageView_trophy"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView_trophy" />
 
         <TextView
-            android:id="@+id/textView13"
+            android:id="@+id/textView_challenge_text"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
+            android:layout_marginLeft="8dp"
             android:text="A Super-Duper challenger title will be awarded to those participants who will qualify the 12 months challenge in the calendar year."
-            android:textColor="@color/light_grey"
-            app:layout_constraintEnd_toEndOf="@+id/textView2"
-            app:layout_constraintHorizontal_bias="0.507"
-            app:layout_constraintStart_toStartOf="@+id/textView2"
+            android:textColor="@color/white"
+            android:fontFamily="@font/roboto_regular"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/status" />
 
         <TextView
-            android:id="@+id/textView15"
+            android:id="@+id/textView_date"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -67,21 +80,20 @@
             android:text="1 Nov 2019 - 29 Nov 2019"
             android:textColor="@color/light_grey"
             android:textSize="12sp"
-            app:layout_constraintEnd_toEndOf="@+id/textView13"
-            app:layout_constraintStart_toStartOf="@+id/textView13"
-            app:layout_constraintTop_toBottomOf="@+id/textView13" />
+            app:layout_constraintEnd_toEndOf="@+id/textView_challenge_text"
+            app:layout_constraintStart_toStartOf="@+id/textView_challenge_text"
+            app:layout_constraintTop_toBottomOf="@+id/textView_challenge_text" />
 
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-
             android:layout_marginTop="4dp"
             android:layout_marginBottom="4dp"
             android:background="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/textView15"
-            app:layout_constraintStart_toStartOf="@+id/textView15"
-            app:layout_constraintTop_toBottomOf="@+id/textView15" />
+            app:layout_constraintEnd_toEndOf="@+id/textView_date"
+            app:layout_constraintStart_toStartOf="@+id/textView_date"
+            app:layout_constraintTop_toBottomOf="@+id/textView_date" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
