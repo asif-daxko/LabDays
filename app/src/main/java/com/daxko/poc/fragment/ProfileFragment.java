@@ -21,7 +21,6 @@ import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
 import com.github.mikephil.charting.formatter.ValueFormatter;
 import com.github.mikephil.charting.utils.ColorTemplate;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -30,7 +29,6 @@ public class ProfileFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = LayoutInflater.from(getContext()).inflate(R.layout.fragment_profile, container, false);
-
         setUpData(view);
         return view;
     }
@@ -59,9 +57,9 @@ public class ProfileFragment extends Fragment {
 
         BarDataSet bardataset = new BarDataSet(stepsTaken, "Steps");
         chart.animateY(3000);
-        /*BarData data = new BarData(dates, bardataset);
+       BarData data = new BarData(dates, bardataset);
         bardataset.setValueTextColor(Color.parseColor("#FFFFFF"));
         bardataset.setColors(ColorTemplate.COLORFUL_COLORS);
-        chart.setData(data);*/
+        chart.setData(data);
     }
 }
