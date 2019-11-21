@@ -57,9 +57,9 @@ public class ProfileFragment extends Fragment {
 
         BarDataSet bardataset = new BarDataSet(stepsTaken, "Steps");
         chart.animateY(3000);
-       BarData data = new BarData(dates, bardataset);
+       /*BarData data = new BarData(dates, bardataset);
         bardataset.setValueTextColor(Color.parseColor("#FFFFFF"));
         bardataset.setColors(ColorTemplate.COLORFUL_COLORS);
-        chart.setData(data);
+        chart.setData(data);*/
     }
 }
