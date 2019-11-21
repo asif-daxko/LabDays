@@ -40,4 +40,26 @@
         <item >@drawable/mug</item>
         <item >@drawable/t_shirt</item>
     </string-array>-->
+
+
+<!--    <string name="zd_url">https://labdays.zendesk.com</string>
+    <string name="zd_appid">95b57579c9dc8b374b411f9484eff001ae181ed6f0260e57</string>
+    <string name="zd_oauth">mobile_sdk_client_b0507da732681fbba154</string>
+    <string name="zopim_account_id">replace_me_chat_account_id</string>-->
+
+    <string name="push_notification_fallback_title">Someone replied to your ticket</string>
+    <string name="add_name">Add name</string>
+    <string name="add_email">Add email</string>
+    <string name="edit">Edit</string>
+    <string name="profile_invalid_email">Please provide an email address</string>
+    <string name="dialog_auth_title">Setup your profile</string>
+    <string name="dialog_auth_positive_btn">Do it now</string>
+    <string name="dialog_auth_negative_btn">Later</string>
+
+    <string name="fragment_main_btn_knowledge_base">Knowledge base</string>
+    <string name="fragment_main_btn_contact_us">Contact us</string>
+    <string name="fragment_main_btn_my_tickets">My tickets</string>
+    <string name="fragment_main_btn_chat">Start chat</string>
+    <string name="fragment_main_btn_answer_bot">Ask Answer Bot</string>
+
 </resources>
