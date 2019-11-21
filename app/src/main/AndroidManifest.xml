@@ -30,10 +30,55 @@
         </activity>
         <activity android:name=".activity.ChallengeRewardActivity" />
         <activity android:name=".activity.ChallengeDetailActivity"></activity>
+        <activity
+            android:name=".activity.CreateProfileActivity"
+            android:label="Profile"
+            />
+
+
+        <service
+            android:name=".push.ZendeskFirebaseMessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".push.ZendeskFirebaseInstanceIdService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+
+
+        <!--
+       ========================
+       Urban Airship - Receiver
+       ========================
+       -->
+
+        <!-- OPTIONAL, if you want to receive push, push opened and registration completed intents -->
+        <!--<receiver
+            android:name="push.IntentReceiver"
+            android:exported="false">
+
+            <intent-filter>
+                <action android:name="com.urbanairship.push.CHANNEL_UPDATED" />
+                <action android:name="com.urbanairship.push.OPENED" />
+                <action android:name="com.urbanairship.push.RECEIVED" />
+                <action android:name="com.urbanairship.push.DISMISSED" />
+
+                <category android:name="${applicationId}" />
+            </intent-filter>
+        </receiver>-->
 
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
+
+
+
     </application>
 
 </manifest>

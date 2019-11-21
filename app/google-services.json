@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "202001532335",
+    "firebase_url": "https://lab-days-7bfd8.firebaseio.com",
+    "project_id": "lab-days-7bfd8",
+    "storage_bucket": "lab-days-7bfd8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:202001532335:android:5c70e391a946475aaf5b5a",
+        "android_client_info": {
+          "package_name": "com.daxko.poc"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "202001532335-opgq0fn89pe5laal7c43nht4vi79ob3j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDRob9Q7BWl0GXHtQ4uhBzpDbSTbDq2qIg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "202001532335-opgq0fn89pe5laal7c43nht4vi79ob3j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
