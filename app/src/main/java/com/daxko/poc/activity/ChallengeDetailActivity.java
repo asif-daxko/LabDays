@@ -23,8 +23,8 @@ public class ChallengeDetailActivity extends AppCompatActivity {
     }
 
     private void setData() {
-        TextView textViewChallengeName = (TextView) findViewById(R.id.textView_challenge_name);
-        TextView textViewChallengeDetail = (TextView) findViewById(R.id.textView_challenge_detail);
+        TextView textViewChallengeName = findViewById(R.id.textView_challenge_name);
+        TextView textViewChallengeDetail = findViewById(R.id.textView_challenge_detail);
 
         // set text
         textViewChallengeName.setText(getIntent().getStringExtra("challenge_name"));

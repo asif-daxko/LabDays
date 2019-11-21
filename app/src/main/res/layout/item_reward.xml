@@ -74,7 +74,7 @@
         android:id="@+id/textView_claim_now"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/button_background"
         android:fontFamily="@font/roboto_medium"
         android:padding="10dp"

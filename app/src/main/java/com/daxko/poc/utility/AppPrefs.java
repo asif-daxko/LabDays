@@ -7,6 +7,7 @@ public class AppPrefs {
 
     private static final String KEY_LAST_TIME_STAMP = "sp_last_timestamp";
     private static final String Steps = "Steps";
+    private static final String Totalcoins = "Coins";
     private static AppPrefs preferenceManager;
     private SharedPreferences preference;
 
@@ -27,5 +28,13 @@ public class AppPrefs {
 
     public void setSteps(long stepslength) {
         preference.edit().putLong(Steps, stepslength).apply();
+    }
+
+    public float getCoins() {
+        return preference.getFloat(Totalcoins, 0);
+    }
+
+    public void setCoins(float Coins) {
+        preference.edit().putFloat(Totalcoins, Coins).apply();
     }
 }
