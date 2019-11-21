@@ -1,29 +1,20 @@
 package com.daxko.poc.fragment;
 
-import android.graphics.Color;
 import android.os.Bundle;
-import android.text.SpannableString;
-import android.text.style.ForegroundColorSpan;
-import android.text.style.RelativeSizeSpan;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-
 import com.daxko.poc.R;
 import com.github.mikephil.charting.charts.BarChart;
-import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
-import com.github.mikephil.charting.formatter.ValueFormatter;
-import com.github.mikephil.charting.utils.ColorTemplate;
-
 import java.util.ArrayList;
 import java.util.List;
+
 
 public class ProfileFragment extends Fragment {
     @Nullable
@@ -36,11 +27,8 @@ public class ProfileFragment extends Fragment {
     }
 
     private void setUpData(View view) {
-
         TextView textViewLevel = (TextView) view.findViewById(R.id.textView_level);
-
         BarChart chart =(BarChart) view.findViewById(R.id.barchart);
-
         List stepsTaken = new ArrayList();
 
         stepsTaken.add(new BarEntry(1240f, 0));
@@ -59,9 +47,9 @@ public class ProfileFragment extends Fragment {
 
         BarDataSet bardataset = new BarDataSet(stepsTaken, "Steps");
         chart.animateY(3000);
-        BarData data = new BarData(dates, bardataset);
-        bardataset.setValueTextColor(Color.parseColor("#FFFFFF"));
-        bardataset.setColors(ColorTemplate.COLORFUL_COLORS);
-        chart.setData(data);
+//        BarData data = new BarData(dates, bardataset);
+//        bardataset.setValueTextColor(Color.parseColor("#FFFFFF"));
+//        bardataset.setColors(ColorTemplate.COLORFUL_COLORS);
+//        chart.setData(data);
     }
 }

@@ -157,6 +157,5 @@ public class FitnessRecordActivity extends AppCompatActivity {
         bars.add(dataset5);
         BarData data = new BarData(bars);
         chart.setData(data);
-
     }
 }
