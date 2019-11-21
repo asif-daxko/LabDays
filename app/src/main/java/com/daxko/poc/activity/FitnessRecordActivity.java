@@ -70,9 +70,13 @@ public class FitnessRecordActivity extends AppCompatActivity {
         radiogrp.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if(chart!=null){
+                    chart.animateY(500);
+                }
                 switch (checkedId){
                     case R.id.calories :
                         headingText.setText("Calories");
+
                         break;
                     case R.id.distance :
                         headingText.setText("Distance [KM]");
@@ -107,6 +111,7 @@ public class FitnessRecordActivity extends AppCompatActivity {
         left.setAxisMaxValue(10);//dataset.getYMax()+2);
         left.setAxisMinValue(0);
         chart.getAxisRight().setEnabled(false);
+        chart.animateY(500);
         XAxis bottomAxis = chart.getXAxis();
         bottomAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
         bottomAxis.setAxisMinValue(0);
