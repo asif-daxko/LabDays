@@ -1,9 +1,11 @@
 package com.daxko.poc.activity;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
@@ -14,14 +16,14 @@ import com.daxko.poc.fragment.RedeemPointFragment;
 import com.daxko.poc.fragment.FriendsFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import java.util.ArrayList;
+
 public class ChallengeRewardActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_challenge_reward);
-
-
         loadFragment(new HomeFragment());
         BottomNavigationView navigation = findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(this);
@@ -60,5 +62,20 @@ public class ChallengeRewardActivity extends AppCompatActivity implements Bottom
             return true;
         }
         return false;
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(resultCode==102){
+            if(data!=null&&data.hasExtra("requestFriend")){
+                ArrayList<String> newFriend=data.getStringArrayListExtra("requestFriend");
+                Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.fragment_container);
+                if(fragment instanceof FriendsFragment){
+                    ((FriendsFragment)fragment).updateFriendList(newFriend);
+                }
+
+            }
+        }
     }
 }

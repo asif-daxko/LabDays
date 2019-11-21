@@ -78,7 +78,7 @@ public class SearchFriendActivity extends AppCompatActivity {
                        Toast.makeText(SearchFriendActivity.this,"Please select contacts to Invite",Toast.LENGTH_LONG).show();
                    }
                }else if(rvAddFriend.getVisibility()==View.VISIBLE){
-                    ArrayList<String> addRequestList=new ArrayList<>();
+                    final ArrayList<String> addRequestList=new ArrayList<>();
                     for(AddFriendModel addFriendModel:addFriendList){
                         if(addFriendModel.isAdd()){
                           addRequestList.add(addFriendModel.getName());
@@ -91,8 +91,10 @@ public class SearchFriendActivity extends AppCompatActivity {
                            @Override
                            public void run() {
                               progressBar.setVisibility(View.GONE);
-                               
-                               finish();
+                              Intent intent=new Intent();
+                              intent.putStringArrayListExtra("requestFriend",addRequestList);
+                              setResult(102,intent);
+                              finish();
                            }
                        },1500);
 
