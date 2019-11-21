@@ -4,7 +4,6 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="image_radius">44dp</dimen>
     <dimen name="image_diameter">88dp</dimen>
-
     <dimen name="dimen_50dp">50dp</dimen>
     <dimen name="dimen_45dp">45dp</dimen>
     <dimen name="dimen_40dp">40dp</dimen>
