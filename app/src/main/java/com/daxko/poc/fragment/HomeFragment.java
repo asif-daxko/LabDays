@@ -23,6 +23,7 @@ import com.daxko.poc.activity.LevelDescriptionActivity;
 import com.daxko.poc.adapter.CardAdapter;
 import com.daxko.poc.interfaces.ChallengeClickListener;
 import com.daxko.poc.utility.AppPrefs;
+import com.daxko.poc.utility.GridSpacingItemDecoration;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.Scopes;
 import com.google.android.gms.common.api.GoogleApiClient;
@@ -67,6 +68,8 @@ public class HomeFragment extends Fragment implements GoogleApiClient.Connection
     private boolean loginVisibility, logoutVisibility;
     private static final String AUTH_PENDING = "auth_state_pending";
     private boolean authInProgress = false;
+    int[] imagesArray = {R.drawable.place_marker, R.drawable.fire, R.drawable.icons_sand_clock, R.drawable.coin_blacknwhite};
+
 
     @Nullable
     @Override
@@ -81,7 +84,6 @@ public class HomeFragment extends Fragment implements GoogleApiClient.Connection
     }
 
     private void setData() {
-        int[] imagesArray = {R.drawable.place_marker, R.drawable.fire, R.drawable.icons_sand_clock, R.drawable.coin_blacknwhite};
 
         seekBar = view.findViewById(R.id.seekBar);
         timeTxtvw = view.findViewById(R.id.time_txtvw);
@@ -94,12 +96,17 @@ public class HomeFragment extends Fragment implements GoogleApiClient.Connection
 
 
         connectGoogleClient();
-
-        cardsRecyclerview.setAdapter(new CardAdapter(getActivity(), this, imagesArray));
         Date currentTime = Calendar.getInstance().getTime();
         SimpleDateFormat sdf = new SimpleDateFormat("hh:mm a");
         sdf.format(currentTime);
         timeTxtvw.setText("Updated at " + sdf.format(currentTime));
+        double distancecovered=(float) (AppPrefs.getInstance(getActivity()).getSteps())*0.000762;
+        double calorieburned=(float) (AppPrefs.getInstance(getActivity()).getSteps())*0.5;
+        double[] fitData = {distancecovered,calorieburned,AppPrefs.getInstance(getActivity()).getCoins(),
+                AppPrefs.getInstance(getActivity()).getCoins()};
+
+        cardsRecyclerview.addItemDecoration(new GridSpacingItemDecoration(20,4));
+        cardsRecyclerview.setAdapter(new CardAdapter(getActivity(), this, imagesArray,fitData));
 
         seekBar.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -230,10 +237,12 @@ public class HomeFragment extends Fragment implements GoogleApiClient.Connection
                 }
             });
         }
-    }
+        AppPrefs.getInstance(getActivity()).setCoins((int)coins);
 
+        }
+    int coins;
     private void coinCalculation(int step_value) {
-        int coins = step_value >= 1000 ? (int) step_value / 1000 : 0;
+         coins = step_value >= 1000 ? (int) step_value / 1000 : 0;
         if (coins > 10 && coins <= 20) {
             updateSeekbar(10, 20);
         } else if (coins > 20 && coins <= 30) {

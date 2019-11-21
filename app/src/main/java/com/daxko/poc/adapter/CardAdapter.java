@@ -24,12 +24,14 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.VH> {
     String[] itemTypeArray;
     ChallengeClickListener challengeClickListener;
     int[] imagesArray;
+    double[] fitData;
 
-    public CardAdapter(Context context, ChallengeClickListener challengeClickListener,int[] imagesArray) {
+    public CardAdapter(Context context, ChallengeClickListener challengeClickListener,int[] imagesArray,double[] fitData) {
         this.context=context;
         this.challengeClickListener=challengeClickListener;
         this.itemTypeArray=context.getResources().getStringArray(R.array.home_screen_item);
         this.imagesArray=imagesArray;
+        this.fitData=fitData;
     }
 
     @NonNull
@@ -43,6 +45,7 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.VH> {
     @Override
     public void onBindViewHolder(@NonNull VH holder, final int position) {
         holder.itemTypeTextvw.setText(itemTypeArray[position]);
+        holder.textView2.setText(fitData[position]+"");
         Glide.with(context).load(imagesArray[position]).into(holder.imageView);
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -59,12 +62,13 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.VH> {
     }
 
     public class VH extends RecyclerView.ViewHolder {
-        TextView itemTypeTextvw;
+        TextView itemTypeTextvw,textView2;
         ImageView imageView;
 
         public VH(@NonNull View itemView) {
             super(itemView);
 
+            textView2=itemView.findViewById(R.id.textView2);
             itemTypeTextvw=itemView.findViewById(R.id.item_type_textvw);
             imageView=itemView.findViewById(R.id.imageView);
         }
