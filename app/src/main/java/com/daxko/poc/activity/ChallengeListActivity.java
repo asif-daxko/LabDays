@@ -18,6 +18,10 @@ import com.daxko.poc.R;
 import com.daxko.poc.adapter.ChallengesAdapter;
 import com.daxko.poc.customViews.CustomAlertDialog;
 import com.daxko.poc.interfaces.ChallengeClickListener;
+import com.daxko.poc.modelData.ChallengeData;
+
+import java.util.ArrayList;
+import java.util.List;
 import com.daxko.poc.interfaces.CustomAlertDialogListener;
 import com.daxko.poc.modelData.UserProfile;
 import com.daxko.poc.push.Global;
@@ -49,6 +53,7 @@ import zendesk.support.requestlist.RequestListActivity;
 
 public class ChallengeListActivity extends AppCompatActivity implements View.OnClickListener, ChallengeClickListener, CustomAlertDialogListener {
     RecyclerView challengesRecyclerview;
+    List<ChallengeData> challengeList;
     private static final long TICKET_FORM_ID = 62599L;
     private static final long TICKET_FIELD_APP_VERSION = 24328555L;
     private static final long TICKET_FIELD_DEVICE_FREE_SPACE = 24274009L;
@@ -63,7 +68,7 @@ public class ChallengeListActivity extends AppCompatActivity implements View.OnC
     private FloatingActionButton customerSupportBtn;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_challenge_list);
 
@@ -104,8 +109,9 @@ public class ChallengeListActivity extends AppCompatActivity implements View.OnC
     }
 
     private void setUpData() {
+        challengeList = new ArrayList<>();
         challengesRecyclerview=findViewById(R.id.challenges_recyclerview);
-        challengesRecyclerview.setAdapter(new ChallengesAdapter(ChallengeListActivity.this,this));
+        challengesRecyclerview.setAdapter(new ChallengesAdapter(ChallengeListActivity.this,this, prepareChallengeList()));
         customerSupportBtn = (FloatingActionButton) findViewById(R.id.btn_customer_support);
         customerSupportBtn.setOnClickListener(this);
         /*customerSupportBtn.setOnClickListener(new LoggedInClickListener(new View.OnClickListener() {
@@ -114,11 +120,46 @@ public class ChallengeListActivity extends AppCompatActivity implements View.OnC
                 ChallengeListActivity.this.openHelpCenter(ChallengeListActivity.this);
             }
         }));*/
+        challengesRecyclerview.setAdapter(new ChallengesAdapter(ChallengeListActivity.this,this,
+                prepareChallengeList()));
+    }
+
+    private List<ChallengeData> prepareChallengeList() {
+
+        ChallengeData data1 = new ChallengeData();
+        data1.setChallengeName("1,000 mile Cycle Challenge");
+        data1.setChallengeDetail("Accumulate 1,000 miles from cycle classes");
+        data1.setChallengeDate("20 Sep 2019 - 22 Sep 2019");
+
+        ChallengeData data2 = new ChallengeData();
+        data2.setChallengeName("Weight Loss Challenge");
+        data2.setChallengeDetail("Lose 20 kgs weight and get a chance to win exciting rewards");
+        data2.setChallengeDate("14 Oct 2019 - 14 Nov 2019");
+
+        ChallengeData data3 = new ChallengeData();
+        data3.setChallengeName("1,000 Steps Daily Challenge");
+        data3.setChallengeDetail("1,000 steps for 2 consecutive days and you can win the challenge. So gear up");
+        data3.setChallengeDate("30 Oct 2019 - 31 Oct 2019");
+
+        ChallengeData data4 = new ChallengeData();
+        data4.setChallengeName("Swimming Challenge");
+        data4.setChallengeDetail("Take out your swim suits and get ready for the upcoming swimming challenge");
+        data4.setChallengeDate("11 Nov 2019");
+
+        challengeList.add(data3);
+        challengeList.add(data2);
+        challengeList.add(data1);
+        challengeList.add(data4);
+
+        return challengeList;
     }
 
     @Override
     public void OnItemClick(View v, int position) {
-        startActivity(new Intent(ChallengeListActivity.this, ChallengeDetailActivity.class));
+        Intent intent = new Intent(ChallengeListActivity.this, ChallengeDetailActivity.class);
+        intent.putExtra("challenge_name", challengeList.get(position).getChallengeName());
+        intent.putExtra("challenge_detail", challengeList.get(position).getChallengeDetail());
+        startActivity(intent);
     }
 
     @Override

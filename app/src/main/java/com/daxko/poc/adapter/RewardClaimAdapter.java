@@ -29,7 +29,7 @@ import com.daxko.poc.R;
     @NonNull
     @Override
     public VH onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.reward_claim_item, parent, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.item_reward, parent, false);
         return new VH(view);
     }
 
