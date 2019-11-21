@@ -15,25 +15,27 @@
 
     <application
         android:name=".MyApplication"
-        android:allowBackup="true"
+        android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        tools:replace="android:name"
-        android:theme="@style/AppTheme">
-        <activity android:name=".activity.FitnessRecordActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".activity.LevelDescriptionActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".activity.ChallengeListActivity">
+        android:theme="@style/AppTheme"
+        tools:replace="android:name">
+        <activity android:name=".activity.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".activity.FitnessRecordActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.LevelDescriptionActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".activity.ChallengeListActivity"/>
         <activity android:name=".activity.ChallengeRewardActivity" />
         <activity android:name=".activity.ChallengeDetailActivity" />
 
