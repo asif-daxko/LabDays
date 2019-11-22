@@ -57,9 +57,9 @@
     <string name="dialog_auth_negative_btn">Later</string>
 
     <string name="fragment_main_btn_knowledge_base">Knowledge base</string>
-    <string name="fragment_main_btn_contact_us">Contact us</string>
+    <string name="fragment_main_btn_contact_us">Raise ticket</string>
     <string name="fragment_main_btn_my_tickets">My tickets</string>
     <string name="fragment_main_btn_chat">Start chat</string>
-    <string name="fragment_main_btn_answer_bot">Ask Answer Bot</string>
+    <string name="fragment_main_btn_answer_bot">Answer Bot</string>
 
 </resources>
