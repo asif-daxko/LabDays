@@ -110,7 +110,7 @@ public class HomeFragment extends Fragment implements GoogleApiClient.Connection
         double[] fitData = {distancecovered,calorieburned,AppPrefs.getInstance(getActivity()).getCoins(),
                 AppPrefs.getInstance(getActivity()).getCoins()};
 
-        //cardsRecyclerview.addItemDecoration(new GridSpacingItemDecoration(20,4));
+        cardsRecyclerview.addItemDecoration(new GridSpacingItemDecoration(20,4));
         cardsRecyclerview.setAdapter(new CardAdapter(getActivity(), this, imagesArray,fitData));
 
         seekBar.setOnTouchListener(new View.OnTouchListener() {
