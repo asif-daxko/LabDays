@@ -134,7 +134,7 @@ public class HomeFragment extends Fragment implements GoogleApiClient.Connection
         });
     }
 
-    
+
     private void connectGoogleClient() {
         mGoogleApiClient = new GoogleApiClient.Builder(getActivity())
                 .addApi(Fitness.SENSORS_API)
