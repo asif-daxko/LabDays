@@ -3,6 +3,7 @@ package com.daxko.poc.adapter;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Build;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -57,8 +58,10 @@ public class AddFriendAdapter  extends RecyclerView.Adapter<AddFriendAdapter.Fri
         holder.memberId.setText(friendList.get(position).getMemberId());
         if(friendList.get(position).isAdd()){
             holder.invite.setBackground(context.getResources().getDrawable(R.drawable.invite_btn_sel));
+            holder.invite.setTextColor(Color.BLACK);
         }else {
             holder.invite.setBackground(context.getResources().getDrawable(R.drawable.invite_btn_unsel));
+            holder.invite.setTextColor(Color.WHITE);
         }
         holder.invite.setOnClickListener(new View.OnClickListener() {
             @Override

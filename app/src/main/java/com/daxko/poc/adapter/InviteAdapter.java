@@ -51,8 +51,10 @@ public void onBindViewHolder(@NonNull FriendHolder holder, final int position) {
         holder.number.setText(friendList.get(position).getNumber());
         if(friendList.get(position).isInvite()){
             holder.invite.setBackground(context.getResources().getDrawable(R.drawable.invite_btn_sel));
+            holder.invite.setTextColor(Color.BLACK);
         }else {
             holder.invite.setBackground(context.getResources().getDrawable(R.drawable.invite_btn_unsel));
+            holder.invite.setTextColor(Color.WHITE);
         }
         holder.invite.setOnClickListener(new View.OnClickListener() {
             @Override

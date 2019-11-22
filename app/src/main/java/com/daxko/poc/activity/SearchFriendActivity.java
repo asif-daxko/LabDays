@@ -199,14 +199,14 @@ public class SearchFriendActivity extends AppCompatActivity {
     public void inviteData(){
       dataList=new ArrayList<>();
       InviteData inviteData1=new InviteData();
-      inviteData1.setName("Smith");
+      inviteData1.setName("Smith Morgan  ");
       inviteData1.setNumber("9867876579");
         InviteData inviteData2=new InviteData();
         inviteData2.setName("Johnson");
         inviteData2.setNumber("986789999");
 
         InviteData inviteData3=new InviteData();
-        inviteData3.setName("Williams");
+        inviteData3.setName("Williams Morgan");
         inviteData3.setNumber("9867833339");
 
         InviteData inviteData4=new InviteData();
@@ -214,27 +214,27 @@ public class SearchFriendActivity extends AppCompatActivity {
         inviteData4.setNumber("9866663339");
 
         InviteData inviteData5=new InviteData();
-        inviteData5.setName("Jackson");
+        inviteData5.setName("Jackson Perry");
         inviteData5.setNumber("638865793");
 
         InviteData inviteData6=new InviteData();
-        inviteData6.setName("Thompson");
+        inviteData6.setName("Thompson Morgan");
         inviteData6.setNumber("638885793");
 
         InviteData inviteData7=new InviteData();
-        inviteData7.setName("Robinson");
+        inviteData7.setName("Robinson Perry  ");
         inviteData7.setNumber("6388888793");
 
         InviteData inviteData8=new InviteData();
-        inviteData8.setName("Taylor");
+        inviteData8.setName("Taylor Morgan");
         inviteData8.setNumber("6388888798");
 
         InviteData inviteData9=new InviteData();
-        inviteData9.setName("Moore");
+        inviteData9.setName("Moore Ross");
         inviteData9.setNumber("6388888797");
 
         InviteData inviteData10=new InviteData();
-        inviteData10.setName("Davis");
+        inviteData10.setName("Davis Ross");
         inviteData10.setNumber("6388888799");
 
 

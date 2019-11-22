@@ -69,7 +69,7 @@
     android:gravity="center"
     android:id="@+id/submit"
     android:textSize="15sp"
-    android:textColor="@color/white"
+    android:textColor="@color/black"
     android:visibility="visible"
     android:fontFamily="@font/roboto_bold"
     android:background="@color/green"

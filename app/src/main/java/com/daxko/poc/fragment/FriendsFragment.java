@@ -65,24 +65,24 @@ public class FriendsFragment extends Fragment {
              }
          });
                 recyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 3));
-        recyclerView.setAdapter(new FriendListAdapyter(getActivity(), Arrays.asList("Clark","Rodriguez","Lewis","Lee","Walker", "Allen","Hernandez","Wright","Lopez","Gonzalez","Nelson","Carter","Garcia")) );
+        recyclerView.setAdapter(new FriendListAdapyter(getActivity(), Arrays.asList("Clark Miller","Rodriguez Wilson","Lewis Davis","Lee Brown","Walker Jones", "Allen Jones","Hernandez Davis","Wright Davis","Lopez Williams","Gonzalez Johnson","Nelson Williams","Carter Smith","Garcia Johnson")) );
     }
 
     public void updateFriendList(ArrayList<String> newFriendList){
        List<String> previousList=new ArrayList<String>();
-       previousList.add("Clark");
-        previousList.add("Rodriguez");
-        previousList.add("Lewis");
-        previousList.add("Lee");
-        previousList.add("Walker");
-        previousList.add("Allen");
-        previousList.add("Hernandez");
-        previousList.add("Wright");
-        previousList.add("Lopez");
-        previousList.add("Gonzalez");
-        previousList.add("Nelson");
-        previousList.add("Carter");
-        previousList.add("Garcia");
+        previousList.add("Clark Miller");
+        previousList.add("Rodriguez Wilson");
+        previousList.add("Lewis Davis");
+        previousList.add("Lee Brown");
+        previousList.add("Walker Jones");
+        previousList.add("Allen Jones");
+        previousList.add("Hernandez Davis");
+        previousList.add("Wright Davis");
+        previousList.add("Lopez Williams");
+        previousList.add("Gonzalez Johnson");
+        previousList.add("Nelson Williams");
+        previousList.add("Carter Smith");
+        previousList.add("Garcia Johnson");
        for(String s:newFriendList){
            previousList.add(s);
        }
