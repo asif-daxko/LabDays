@@ -3,9 +3,7 @@ package com.daxko.poc.activity;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.app.AlertDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Environment;
@@ -24,8 +22,6 @@ import java.util.ArrayList;
 import java.util.List;
 import com.daxko.poc.interfaces.CustomAlertDialogListener;
 import com.daxko.poc.modelData.UserProfile;
-import com.daxko.poc.push.Global;
-import com.daxko.poc.push.PushUtils;
 import com.daxko.poc.storage.AppStorage;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.zendesk.service.ErrorResponse;
@@ -35,8 +31,6 @@ import com.zendesk.util.StringUtils;
 import com.zopim.android.sdk.api.ZopimChat;
 import com.zopim.android.sdk.model.VisitorInfo;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Locale;
 
 import zendesk.answerbot.AnswerBot;
