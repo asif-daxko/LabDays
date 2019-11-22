@@ -252,11 +252,11 @@ public class SearchFriendActivity extends AppCompatActivity {
 
     public void friendData(){
         addFriendList=new ArrayList<>();
-        AddFriendModel addFriendModel1=new AddFriendModel("Gyanendra","315",false);
-        AddFriendModel addFriendModel2=new AddFriendModel("Vikash","316",false);
-        AddFriendModel addFriendModel3=new AddFriendModel("Lokesh","317",false);
-        AddFriendModel addFriendModel4=new AddFriendModel("Kanchan","318",false);
-        AddFriendModel addFriendModel5=new AddFriendModel("Rajat","319",false);
+        AddFriendModel addFriendModel1=new AddFriendModel("Jay","315",false);
+        AddFriendModel addFriendModel2=new AddFriendModel("Scott Stevens","316",false);
+        AddFriendModel addFriendModel3=new AddFriendModel("Leonid","317",false);
+        AddFriendModel addFriendModel4=new AddFriendModel("Sarah","318",false);
+        AddFriendModel addFriendModel5=new AddFriendModel("Jordan","319",false);
         addFriendList.add(addFriendModel1);
         addFriendList.add(addFriendModel2);
         addFriendList.add(addFriendModel3);

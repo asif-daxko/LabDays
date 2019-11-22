@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -62,6 +63,7 @@ public class HomeFragment extends Fragment implements GoogleApiClient.Connection
     RecyclerView cardsRecyclerview;
     ConstraintLayout levelCard;
     SeekBar seekBar;
+    Button button;
     private static final String TAG = ChallengeDetailActivity.class.getSimpleName();
     private GoogleApiClient mGoogleApiClient;
     private static final int REQUEST_OAUTH = 1;
@@ -95,7 +97,7 @@ public class HomeFragment extends Fragment implements GoogleApiClient.Connection
         coinTextvw = view.findViewById(R.id.textView8);
         cardsRecyclerview = view.findViewById(R.id.cards_recyclerview);
         levelCard = view.findViewById(R.id.level_card);
-
+        button=view.findViewById(R.id.button);
 
         connectGoogleClient();
         Date currentTime = Calendar.getInstance().getTime();
@@ -122,7 +124,19 @@ public class HomeFragment extends Fragment implements GoogleApiClient.Connection
                 startActivity(new Intent(getContext(), LevelDescriptionActivity.class));
             }
         });
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent shareIntent =   new Intent(android.content.Intent.ACTION_SEND);
+                shareIntent.setType("text/plain");
+                shareIntent.putExtra(Intent.EXTRA_SUBJECT,"Daxko Reward System");
+                String app_url = "https://play.google.com/store/apps/details?id=com.daxko.mobile&hl=en";
+                shareIntent.putExtra(android.content.Intent.EXTRA_TEXT,"Invitation Code: FgKY7847  "+app_url);
+                startActivity(Intent.createChooser(shareIntent, "Share via"));
+            }
+        });
     }
+
 
     private void connectGoogleClient() {
         mGoogleApiClient = new GoogleApiClient.Builder(getActivity())
