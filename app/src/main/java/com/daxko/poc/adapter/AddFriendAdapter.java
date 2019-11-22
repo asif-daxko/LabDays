@@ -1,8 +1,6 @@
 package com.daxko.poc.adapter;
 
-import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 import android.util.Log;
@@ -12,20 +10,22 @@ import android.view.ViewGroup;
 import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.TextView;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.recyclerview.widget.RecyclerView;
+
 import com.daxko.poc.R;
 import com.daxko.poc.modelData.AddFriendModel;
-import com.daxko.poc.modelData.InviteData;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class AddFriendAdapter  extends RecyclerView.Adapter<AddFriendAdapter.FriendHolder> implements Filterable {
     private Context context;
-    List<AddFriendModel> fixList;
-    List<AddFriendModel> friendList;
-    FriendFilter friendFilter;
+    private List<AddFriendModel> fixList;
+    private List<AddFriendModel> friendList;
+    private FriendFilter friendFilter;
 
     public AddFriendAdapter(@NonNull Context context, List<AddFriendModel> friendList,List<AddFriendModel> fixList) {
         this.context = context;
@@ -90,10 +90,10 @@ public class AddFriendAdapter  extends RecyclerView.Adapter<AddFriendAdapter.Fri
     }
 
 
-    public class FriendHolder extends RecyclerView.ViewHolder {
+    class FriendHolder extends RecyclerView.ViewHolder {
         TextView friendName, shortName, invite,memberId;
 
-        public FriendHolder(@NonNull View itemView) {
+        FriendHolder(@NonNull View itemView) {
             super(itemView);
             friendName = itemView.findViewById(R.id.friendName);
             shortName = itemView.findViewById(R.id.shortName);
