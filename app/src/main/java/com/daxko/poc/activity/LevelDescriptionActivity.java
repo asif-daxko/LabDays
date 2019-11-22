@@ -10,6 +10,7 @@ import android.widget.RadioGroup;
 
 import com.daxko.poc.R;
 import com.daxko.poc.fragment.LevelTypeFragment;
+import com.daxko.poc.utility.AppPrefs;
 
 public class LevelDescriptionActivity extends AppCompatActivity {
     RadioGroup levelsRadiogrp;
@@ -28,27 +29,14 @@ public class LevelDescriptionActivity extends AppCompatActivity {
         backImg=findViewById(R.id.back_img);
         levelsRadiogrp=findViewById(R.id.levels_radiogrp);
         loadFragment(new LevelTypeFragment(),1);
+        int levelcount= AppPrefs.getInstance(LevelDescriptionActivity.this).getLevel();
+        int checkedId = levelsRadiogrp.getChildAt(levelcount).getId();
+        setRadioData(checkedId);
 
         levelsRadiogrp.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
-                switch (checkedId){
-                    case R.id.level1:
-                        loadFragment(new LevelTypeFragment(),1);
-                        break;
-                    case R.id.level2:
-                        loadFragment(new LevelTypeFragment(),2);
-                        break;
-                    case R.id.level3:
-                        loadFragment(new LevelTypeFragment(),3);
-                        break;
-                    case R.id.level4:
-                        loadFragment(new LevelTypeFragment(),4);
-                        break;
-                    case R.id.level5:
-                        loadFragment(new LevelTypeFragment(), 5);
-                        break;
-                }
+                setRadioData(checkedId);
             }
         });
 
@@ -58,6 +46,26 @@ public class LevelDescriptionActivity extends AppCompatActivity {
                 onBackPressed();
             }
         });
+    }
+
+    private void setRadioData(int checkedId) {
+        switch (checkedId){
+            case R.id.level1:
+                loadFragment(new LevelTypeFragment(),1);
+                break;
+            case R.id.level2:
+                loadFragment(new LevelTypeFragment(),2);
+                break;
+            case R.id.level3:
+                loadFragment(new LevelTypeFragment(),3);
+                break;
+            case R.id.level4:
+                loadFragment(new LevelTypeFragment(),4);
+                break;
+            case R.id.level5:
+                loadFragment(new LevelTypeFragment(), 5);
+                break;
+        }
     }
 
     private boolean loadFragment(Fragment fragment,int count) {
