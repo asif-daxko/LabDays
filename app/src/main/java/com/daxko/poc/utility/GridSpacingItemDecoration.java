@@ -18,7 +18,7 @@ public class GridSpacingItemDecoration extends RecyclerView.ItemDecoration {
     @Override
     public void getItemOffsets(final Rect outRect, final View view, RecyclerView parent,
                                RecyclerView.State state) {
-        final int position = parent.getChildLayoutPosition(view);
+        /*final int position = parent.getChildLayoutPosition(view);
         final int column = position % mSpanCount;
         final int parentWidth = parent.getWidth();
         int spacing = (int) (parentWidth - (mItemSize * mSpanCount)) / (mSpanCount + 1);
@@ -28,6 +28,16 @@ public class GridSpacingItemDecoration extends RecyclerView.ItemDecoration {
         if (position < mSpanCount) {
             outRect.top = spacing;
         }
-        outRect.bottom = spacing;
+        outRect.bottom = spacing;*/
+        outRect.left = 5;
+        outRect.right = 20;
+        outRect.bottom = 5;
+
+        // Add top margin only for the first item to avoid double space between items
+        if (parent.getChildLayoutPosition(view) == 0) {
+            outRect.top = 5;
+        } else {
+            outRect.top = 0;
+        }
     }
 }
