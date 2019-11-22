@@ -45,7 +45,7 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.VH> {
     @Override
     public void onBindViewHolder(@NonNull VH holder, final int position) {
         holder.itemTypeTextvw.setText(itemTypeArray[position]);
-        holder.textView2.setText(fitData[position]+"");
+        holder.textView2.setText(String.format("%.2f", fitData[position])+"");
         Glide.with(context).load(imagesArray[position]).into(holder.imageView);
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
