@@ -57,6 +57,7 @@ public class HomeFragment extends Fragment implements GoogleApiClient.Connection
         GoogleApiClient.OnConnectionFailedListener, OnDataPointListener, ChallengeClickListener {
     View view;
     TextView timeTxtvw, txtSteps, coinTextvw;
+    TextView textView10,textView11;
     TextView startSeekbar, seekbarEnd;
     RecyclerView cardsRecyclerview;
     ConstraintLayout levelCard;
@@ -84,7 +85,8 @@ public class HomeFragment extends Fragment implements GoogleApiClient.Connection
     }
 
     private void setData() {
-
+        textView10 = view.findViewById(R.id.textView10);
+        textView11 = view.findViewById(R.id.textView11);
         seekBar = view.findViewById(R.id.seekBar);
         timeTxtvw = view.findViewById(R.id.time_txtvw);
         txtSteps = view.findViewById(R.id.txtSteps);
@@ -244,14 +246,19 @@ public class HomeFragment extends Fragment implements GoogleApiClient.Connection
     private void coinCalculation(int step_value) {
          coins = step_value >= 1000 ? (int) step_value / 1000 : 0;
         if (coins > 10 && coins <= 20) {
+            updateLevels( 2,  "Reach 20 coin, 3 day in arow to reach LEVEL 2.");
             updateSeekbar(10, 20);
         } else if (coins > 20 && coins <= 30) {
+            updateLevels( 3,  "Reach 30 coin, 3 day in arow to reach LEVEL 3.");
             updateSeekbar(20, 30);
         } else if (coins > 30 && coins <= 40) {
+            updateLevels( 4,  "Reach 40 coin, 3 day in arow to reach LEVEL 4.");
             updateSeekbar(30, 40);
         } else if (coins > 40 && coins <= 50) {
+            updateLevels( 5,  "Reach 50 coin, 3 day in arow to reach LEVEL 5.");
             updateSeekbar(40, 50);
         } else {
+            updateLevels( 1,  "Reach 10 coin, 3 day in arow to reach LEVEL 2.");
             updateSeekbar(0, 10);
         }
         seekBar.setProgress(coins);
@@ -320,5 +327,10 @@ public class HomeFragment extends Fragment implements GoogleApiClient.Connection
             Log.i(TAG, "Total calories: " + aLong);
 
         }
+    }
+
+    public void updateLevels(int level, String levelDescription){
+        textView10.setText("Level "+level);
+        textView11.setText(levelDescription);
     }
 }

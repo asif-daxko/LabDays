@@ -25,7 +25,7 @@
             android:textColor="@color/white"
             android:fontFamily="@font/roboto_bold"
             android:background="@drawable/friend_name_bg"
-            android:layout_height="40dp"></TextView>
+            android:layout_height="40dp"/>
        <LinearLayout
            android:layout_marginLeft="7dp"
            android:orientation="vertical"

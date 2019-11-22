@@ -16,6 +16,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.daxko.poc.R;
+import com.daxko.poc.activity.LeaderBoardActivity;
 import com.daxko.poc.activity.SearchFriendActivity;
 import com.daxko.poc.adapter.FriendListAdapyter;
 
@@ -29,6 +30,7 @@ public class FriendsFragment extends Fragment {
     TextView tvLeaderBoard;
     LinearLayout tvRank;
     SearchView searchView;
+    ArrayList<String> friendslist;
 
     @Nullable
     @Override
@@ -54,7 +56,10 @@ public class FriendsFragment extends Fragment {
         tvLeaderBoard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(),"Leader Board",Toast.LENGTH_LONG).show();
+               // Toast.makeText(getActivity(),"Leader Board",Toast.LENGTH_LONG).show();
+                Intent leaderboardIntent = new Intent(getActivity(), LeaderBoardActivity.class);
+                leaderboardIntent.putStringArrayListExtra("leaderboarddata",friendslist);
+                startActivity(leaderboardIntent);
             }
         });
          viewOverLay.setOnClickListener(new View.OnClickListener() {
@@ -65,27 +70,31 @@ public class FriendsFragment extends Fragment {
              }
          });
                 recyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 3));
-        recyclerView.setAdapter(new FriendListAdapyter(getActivity(), Arrays.asList("Clark","Rodriguez","Lewis","Lee","Walker", "Allen","Hernandez","Wright","Lopez","Gonzalez","Nelson","Carter","Garcia")) );
+                friendslist=new ArrayList<>();
+                friendslist.addAll(Arrays.asList("Clark","Rodriguez","Lewis","Lee","Walker", "Allen","Hernandez","Wright",
+                        "Lopez","Gonzalez","Nelson","Carter","Garcia"));
+        recyclerView.setAdapter(new FriendListAdapyter(getActivity(),
+                friendslist ));
     }
 
     public void updateFriendList(ArrayList<String> newFriendList){
-       List<String> previousList=new ArrayList<String>();
-       previousList.add("Clark");
-        previousList.add("Rodriguez");
-        previousList.add("Lewis");
-        previousList.add("Lee");
-        previousList.add("Walker");
-        previousList.add("Allen");
-        previousList.add("Hernandez");
-        previousList.add("Wright");
-        previousList.add("Lopez");
-        previousList.add("Gonzalez");
-        previousList.add("Nelson");
-        previousList.add("Carter");
-        previousList.add("Garcia");
+//       friendslist=new ArrayList<String>();
+//       friendslist.add("Clark");
+//        friendslist.add("Rodriguez");
+//        friendslist.add("Lewis");
+//        friendslist.add("Lee");
+//        friendslist.add("Walker");
+//        friendslist.add("Allen");
+//        friendslist.add("Hernandez");
+//        friendslist.add("Wright");
+//        friendslist.add("Lopez");
+//        friendslist.add("Gonzalez");
+//        friendslist.add("Nelson");
+//        friendslist.add("Carter");
+//        friendslist.add("Garcia");
        for(String s:newFriendList){
-           previousList.add(s);
+           friendslist.add(s);
        }
-        recyclerView.setAdapter(new FriendListAdapyter(getActivity(),previousList));
+        recyclerView.setAdapter(new FriendListAdapyter(getActivity(),friendslist));
     }
 }
