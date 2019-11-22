@@ -52,7 +52,7 @@ public class FitnessRecordActivity extends AppCompatActivity {
 
         double distancecovered=(float) (AppPrefs.getInstance(FitnessRecordActivity.this).getSteps())*0.000762;
         double calorieburned=(float) (AppPrefs.getInstance(FitnessRecordActivity.this).getSteps())*0.5;
-        distance.setText(distancecovered+"\nDistance (km)");
+        distance.setText(String.format("%.2f", distancecovered)+"\nDistance (km)");
         calories.setText(calorieburned+"\nCalorie");
         steps.setText(AppPrefs.getInstance(FitnessRecordActivity.this).getSteps()+"\nSteps");
         headingText.setText("Steps");
