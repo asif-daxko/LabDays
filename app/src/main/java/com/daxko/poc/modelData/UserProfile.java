@@ -2,9 +2,7 @@ package com.daxko.poc.modelData;
 
 import android.net.Uri;
 
-/**
- * Data model for a user profile
- */
+
 public class UserProfile {
 
     private final String name;
