@@ -8,6 +8,7 @@ public class AppPrefs {
     private static final String KEY_LAST_TIME_STAMP = "sp_last_timestamp";
     private static final String Steps = "Steps";
     private static final String Totalcoins = "Coins";
+    private static final String Level = "Level";
     private static AppPrefs preferenceManager;
     private SharedPreferences preference;
 
@@ -28,6 +29,14 @@ public class AppPrefs {
 
     public void setSteps(long stepslength) {
         preference.edit().putLong(Steps, stepslength).apply();
+    }
+
+    public int getLevel() {
+        return preference.getInt(Level, 1);
+    }
+
+    public void setLevel(int level) {
+        preference.edit().putInt(Level, level).apply();
     }
 
     public float getCoins() {

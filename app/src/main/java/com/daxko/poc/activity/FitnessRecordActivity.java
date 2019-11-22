@@ -107,7 +107,7 @@ public class FitnessRecordActivity extends AppCompatActivity {
 
         // below is simply styling decisions on code that I have)
         YAxis left = chart.getAxisLeft();
-        left.setAxisMaxValue(10);//dataset.getYMax()+2);
+        left.setAxisMaxValue(2500);//dataset.getYMax()+2);
         left.setAxisMinValue(0);
         chart.getAxisRight().setEnabled(false);
         chart.animateY(500);
@@ -124,15 +124,15 @@ public class FitnessRecordActivity extends AppCompatActivity {
         legend.setYOffset(40);
         legend.setTextSize(200);
         ArrayList<BarEntry> entries = new ArrayList<>();
-        entries.add(new BarEntry (1, 5));
+        entries.add(new BarEntry (1, 500));
         ArrayList<BarEntry> entries2 = new ArrayList<>();
-        entries2.add(new BarEntry (3, 2));
+        entries2.add(new BarEntry (3, 700));
         ArrayList<BarEntry> entries3 = new ArrayList<>();
-        entries3.add(new BarEntry (5, 7));
+        entries3.add(new BarEntry (5, 950));
         ArrayList<BarEntry> entries4 = new ArrayList<>();
-        entries4.add(new BarEntry (7, 7));
+        entries4.add(new BarEntry (7, 650));
         ArrayList<BarEntry> entries5 = new ArrayList<>();
-        entries5.add(new BarEntry (9, 1));
+        entries5.add(new BarEntry (9, 1500));
         List<IBarDataSet> bars = new ArrayList<IBarDataSet>();
         BarDataSet dataset = new BarDataSet(entries, "First");
         dataset.setColor(Color.RED);

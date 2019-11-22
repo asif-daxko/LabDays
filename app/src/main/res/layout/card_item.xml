@@ -31,6 +31,7 @@
             <ImageView
                 android:id="@+id/imageView"
                 android:src="@drawable/fire"
+                android:tint="@color/black"
                 android:layout_gravity="center"
                 android:layout_width="20dp"
                 android:layout_height="20dp"/>
