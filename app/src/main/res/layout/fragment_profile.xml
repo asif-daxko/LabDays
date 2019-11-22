@@ -17,7 +17,7 @@
             android:background="@drawable/name_background"
             android:fontFamily="@font/roboto_bold"
             android:gravity="center"
-            android:text="AK"
+            android:text="CM"
             android:textColor="@color/white"
             android:textSize="20sp"
             app:layout_constraintLeft_toLeftOf="parent"

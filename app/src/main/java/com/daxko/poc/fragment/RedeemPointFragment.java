@@ -18,6 +18,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.daxko.poc.R;
 import com.daxko.poc.adapter.RewardClaimAdapter;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class RedeemPointFragment extends Fragment implements View.OnClickListener {
     View view;
@@ -95,6 +96,8 @@ public class RedeemPointFragment extends Fragment implements View.OnClickListene
     }
 
     private boolean loadFragment(Fragment fragment) {
+        BottomNavigationView view = getActivity().findViewById(R.id.navigation);
+        view.getMenu().getItem(0).setChecked(true);
         //switching fragment
         if (fragment != null) {
              getActivity().getSupportFragmentManager()

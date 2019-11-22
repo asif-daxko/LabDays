@@ -24,7 +24,7 @@
             android:id="@+id/imageView4"
             android:layout_width="30dp"
             android:gravity="center_horizontal"
-            android:background="@drawable/curve_background"
+            android:background="@drawable/curve_background_home"
             android:layout_height="30dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" >
